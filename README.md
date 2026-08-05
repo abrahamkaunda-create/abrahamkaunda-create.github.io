@@ -1,17 +1,34 @@
-# Abraham Kaunda — IT Portfolio
+# Abraham Kaunda — Computer Science Portfolio
 
-A lightweight, recruiter-facing portfolio presenting my background in IT support, networking, infrastructure and automation.
+A responsive personal portfolio where I share what I build, what I am learning and the technical problems I have explored.
 
-## Featured content
+## About the portfolio
 
-- Computer Science graduate profile
-- Layer 2/3 networking, pfSense, Python, Ansible and virtualisation skills
-- Final-year pfSense firewall configuration and evaluation project
-- Responsive, accessible layout for desktop and mobile
+I am a BSc (Hons) Computer Science graduate with interests across web development, software, networking and systems. This repository is intended to grow as I complete projects that are real, tested and worth explaining.
+
+## Current projects
+
+### Personal portfolio website
+
+This website is itself a project: a responsive static site built with readable HTML and CSS, managed with GitHub and automatically deployed through GitHub Actions and GitHub Pages.
+
+### Network security evaluation using pfSense
+
+My final-year university project used a virtualised network laboratory to evaluate pfSense, an open-source firewall and routing platform. The work covered firewall rules, NAT, network segmentation, IDS/IPS testing, OpenVPN/IPsec, latency and throughput assessment, and documentation of technical limitations and trade-offs.
+
+## Technical areas represented
+
+- HTML and CSS
+- Python and basic SQL
+- Git and GitHub
+- VMware and VirtualBox
+- TCP/IP, DNS, DHCP and NAT
+- pfSense, firewall rules and network segmentation
+- Troubleshooting and technical documentation
 
 ## Technology
 
-The site deliberately uses plain HTML and CSS. It has no framework, package manager, database, server-side code or external runtime dependency. This keeps the source easy to inspect and makes it portable across GitHub Pages and other static hosts.
+The portfolio deliberately uses plain HTML and CSS. It has no framework, package manager, database, server-side code or external runtime dependency. This keeps the source easy to inspect and portable across static hosting providers.
 
 ## Project structure
 
@@ -27,7 +44,7 @@ The site deliberately uses plain HTML and CSS. It has no framework, package mana
 
 ## Run locally
 
-No installation is required. Either open `index.html` directly in a browser or serve the directory locally:
+No installation is required. Open `index.html` directly in a browser or serve the directory locally:
 
 ```bash
 python -m http.server 8000
@@ -35,19 +52,17 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-## Deploy with GitHub Pages
+## Deployment
 
-1. Create a new GitHub repository and place these files at its root.
-2. Push the repository to the `main` branch.
-3. Open **Settings → Pages** in GitHub.
-4. Under **Build and deployment**, select **GitHub Actions** as the source.
-5. Open the **Actions** tab to follow the deployment. Later pushes to `main` will update the site automatically.
+The included workflow publishes the site through GitHub Pages whenever changes are pushed to the `main` branch.
 
-The included workflow follows GitHub's supported Pages deployment process.
+1. Open **Settings → Pages** in GitHub.
+2. Under **Build and deployment**, select **GitHub Actions** as the source.
+3. Open the **Actions** tab to follow the deployment.
 
 ## Content accuracy
 
-The portfolio is intentionally limited to skills and project work I can discuss honestly in a technical interview. It does not claim certifications, employers or achievements that are not part of my background.
+This portfolio is intentionally limited to skills and project work I can explain honestly. It does not claim employers, certifications or achievements that are not part of my background.
 
 ## Contact
 

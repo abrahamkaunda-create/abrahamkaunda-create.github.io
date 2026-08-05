@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A recruiter-friendly case study of Abraham Kaunda's final-year pfSense firewall project, based on the submitted university report.">
+    <meta name="theme-color" content="#101c2b">
+    <title>pfSense Firewall Case Study | Abraham Kaunda</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Return to Abraham Kaunda's portfolio">
+          <span class="brand-mark">AK</span>
+          <span>Abraham Kaunda</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="index.html#about">About</a>
+          <a href="index.html#projects">Projects</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">☾</span>
+          </button>
+          <a class="nav-cta" href="mailto:abrahamkaunda@gmail.com">Contact</a>
+        </nav>
+      </header>
+
+      <section class="case-hero">
+        <p class="eyebrow">Final-year project · University of Roehampton · 2024</p>
+        <h1>pfSense Firewall for Open-Source Network Security</h1>
+        <p class="case-lead">
+          A virtualised network-security project examining how pfSense could be
+          configured and evaluated for smaller organisations and home-office
+          environments, with attention to security, functionality, usability
+          and performance trade-offs.
+        </p>
+        <div class="case-actions">
+          <a class="button button-primary" href="#evidence">View the evidence <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="index.html#projects">Back to projects</a>
+        </div>
+        <div class="case-meta" aria-label="Project summary">
+          <div><span>Project type</span><strong>Academic virtual lab</strong></div>
+          <div><span>Primary platform</span><strong>pfSense on VMware</strong></div>
+          <div><span>Network design</span><strong>WAN, LAN and LAN2</strong></div>
+          <div><span>Evidence source</span><strong>Submitted BSc report</strong></div>
+        </div>
+      </section>
+
+      <section class="case-section" id="evidence">
+        <div class="case-section-heading">
+          <div class="section-label"><span>01</span> Verified setup</div>
+          <h2>What the retained project evidence directly shows.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The submitted report contains two pfSense administration screenshots
+            and a network diagram. Together they directly evidence a VMware-hosted
+            pfSense Community Edition instance, three assigned interfaces and a
+            configured DHCP service for the protected LAN.
+          </p>
+          <div class="case-facts">
+            <article class="case-fact"><span>01 / PLATFORM</span><strong>VMware virtual machine</strong></article>
+            <article class="case-fact"><span>02 / FIREWALL</span><strong>pfSense CE 2.7.2</strong></article>
+            <article class="case-fact"><span>03 / INTERFACES</span><strong>WAN, LAN and LAN2</strong></article>
+            <article class="case-fact"><span>04 / LAN SERVICE</span><strong>DHCP on 192.168.1.0/24</strong></article>
+          </div>
+          <div class="case-visual-grid">
+            <figure class="case-figure">
+              <img src="assets/pfsense-dhcp.png" alt="pfSense DHCP Server settings showing DHCP enabled on the LAN interface with an address pool from 192.168.1.10 to 192.168.1.245">
+              <figcaption>Retained project screenshot: DHCP enabled on the LAN interface with a defined address pool.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/pfsense-topology.png" alt="Network diagram showing internet traffic passing through pfSense to separate WAN and LAN switches and client devices">
+              <figcaption>Submitted topology diagram: pfSense positioned between the external connection and two internal network paths.</figcaption>
+            </figure>
+          </div>
+          <aside class="evidence-note">
+            <h3>Evidence boundary</h3>
+            <p>
+              The original virtual machines, configuration export and raw benchmark
+              dataset are not currently retained. The report documents broader
+              implementation and testing, but this page does not invent exact
+              throughput, latency or attack-blocking figures that cannot be checked
+              from the surviving evidence.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-heading">
+          <div class="section-label"><span>02</span> Project scope</div>
+          <h2>Configuration work and technical areas documented.</h2>
+        </div>
+        <div class="case-body">
+          <div class="scope-grid">
+            <article class="scope-card">
+              <h3>Directly evidenced</h3>
+              <ul>
+                <li>pfSense running as a VMware virtual machine</li>
+                <li>WAN, LAN and LAN2 interface assignments</li>
+                <li>DHCP enabled for the protected LAN</li>
+                <li>Defined DHCP subnet and address pool</li>
+                <li>Network topology separating external and internal paths</li>
+              </ul>
+            </article>
+            <article class="scope-card">
+              <h3>Documented in the report</h3>
+              <ul>
+                <li>Firewall rules using addresses, protocols and ports</li>
+                <li>NAT, port forwarding and stateful traffic filtering</li>
+                <li>IDS/IPS, traffic shaping and content filtering</li>
+                <li>Multi-WAN failover and load-balancing concepts</li>
+                <li>OpenVPN, IPsec and Squid proxy configuration</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-heading">
+          <div class="section-label"><span>03</span> Evaluation</div>
+          <h2>How the report assessed the firewall.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The report organised the evaluation around security, performance,
+            usability and functionality. It describes allow-and-block rule tests,
+            remote-access checks, content-filtering tests and monitoring of
+            throughput, latency and resource use. Because the submitted document
+            records qualitative conclusions rather than a reproducible numerical
+            results table, the findings below are intentionally expressed without
+            unsupported figures.
+          </p>
+          <div class="finding-grid">
+            <article class="finding-card">
+              <span>01 / SECURITY</span>
+              <h3>Control and visibility</h3>
+              <p>Granular firewall policy, network separation and additional packages offered stronger control than relying only on a basic endpoint firewall.</p>
+            </article>
+            <article class="finding-card">
+              <span>02 / USABILITY</span>
+              <h3>Power adds complexity</h3>
+              <p>The web interface made initial configuration approachable, but rule management, VPNs and advanced features required greater technical understanding.</p>
+            </article>
+            <article class="finding-card">
+              <span>03 / PERFORMANCE</span>
+              <h3>Trade-offs matter</h3>
+              <p>The report observed acceptable behaviour for the lab use case while recognising that complex inspection and heavier traffic can add processing overhead.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="case-section-heading">
+          <div class="section-label"><span>04</span> Learning</div>
+          <h2>Challenges, judgement and limitations.</h2>
+        </div>
+        <div class="case-body">
+          <ul class="limitations-list">
+            <li><span>01 /</span><div><strong>Rule interaction:</strong> the report records unexpected traffic blocking when failover and firewall rules interacted, resolved through rule analysis and reordering.</div></li>
+            <li><span>02 /</span><div><strong>VPN troubleshooting:</strong> certificate mismatches, routing and DNS required careful checking during the OpenVPN work.</div></li>
+            <li><span>03 /</span><div><strong>Configuration depth:</strong> IPsec and content-filtering options demonstrated that secure defaults still require informed technical decisions.</div></li>
+            <li><span>04 /</span><div><strong>Evidence limitation:</strong> the report does not preserve raw configuration files or exact benchmark tables, so a future reconstruction would be needed for fully reproducible testing.</div></li>
+            <li><span>05 /</span><div><strong>Academic scope:</strong> this was a controlled university lab, not a production deployment or commercial security assessment.</div></li>
+          </ul>
+          <aside class="evidence-note">
+            <h3>Full report status</h3>
+            <p>
+              The submitted report is not linked publicly yet. It contains template
+              remnants, document metadata and references that need checking before
+              a sanitised PDF can be responsibly published. This case study is the
+              cleaner recruiter-facing summary.
+            </p>
+          </aside>
+          <a class="case-return" href="index.html#projects"><span aria-hidden="true">←</span> Return to all projects</a>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <p class="eyebrow">Discuss the project</p>
+          <h2>Interested in the technical decisions behind the lab?</h2>
+        </div>
+        <a class="footer-email" href="mailto:abrahamkaunda@gmail.com">abrahamkaunda@gmail.com <span aria-hidden="true">↗</span></a>
+        <p class="footer-bottom">© 2026 Abraham Kaunda <span>London, United Kingdom</span></p>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

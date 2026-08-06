@@ -263,6 +263,19 @@ footer h2 { max-width: 750px; margin: 0; font-size: clamp(42px, 5vw, 74px); line
 }
 .theme-toggle:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
 
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .reveal-item {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .65s ease, transform .65s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .reveal-ready .reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root[data-theme="dark"] {
   --paper: #0b121c;
   --ink: #f4f1e9;

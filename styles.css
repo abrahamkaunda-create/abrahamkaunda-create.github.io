@@ -111,12 +111,25 @@ nav a:hover { opacity: .55; }
 .projects-heading > p { margin: 0 0 5px; color: #aeb8c1; font-size: 14px; line-height: 1.7; }
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 62px; }
 .project-tile { overflow: hidden; border: 1px solid rgba(255,255,255,.18); background: #132235; }
+.project-tile-featured { grid-column: 1 / -1; display: grid; grid-template-columns: .9fr 1.1fr; }
+.project-tile-featured .project-visual { border-right: 1px solid rgba(255,255,255,.16); border-bottom: 0; }
 .project-visual { position: relative; min-height: 360px; overflow: hidden; display: grid; place-items: center; border-bottom: 1px solid rgba(255,255,255,.16); }
 .project-visual::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 32px 32px; }
 .web-visual { background: #d8ff54; }
 .web-visual::before { background-image: linear-gradient(rgba(16,28,43,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(16,28,43,.08) 1px, transparent 1px); }
 .network-visual { background: #193c60; }
 .network-visual::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, transparent 0 14%, rgba(214,255,63,.1) 14.3% 14.6%, transparent 15% 27%, rgba(214,255,63,.12) 27.3% 27.6%, transparent 28%); }
+.toolkit-visual { background: linear-gradient(145deg, #173e64, #0d1d2f); }
+.toolkit-console { position: relative; z-index: 2; width: 78%; border: 1px solid rgba(255,255,255,.55); background: #0c1724; box-shadow: 13px 13px 0 var(--acid); }
+.toolkit-console-bar { display: flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-bottom: 1px solid rgba(255,255,255,.2); }
+.toolkit-console-bar i { width: 7px; height: 7px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; }
+.toolkit-console-bar span { margin-left: auto; color: #7f91a1; font: 400 9px/1 monospace; letter-spacing: .06em; }
+.toolkit-console-body { padding: 18px; }
+.toolkit-console-body p { display: grid; grid-template-columns: 42px 1fr auto; gap: 12px; align-items: center; margin: 0; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.13); font: 400 11px/1.4 monospace; }
+.toolkit-console-body p:last-child { border-bottom: 0; }
+.toolkit-console-body b { color: var(--acid); }
+.toolkit-console-body span { color: #e7ebed; }
+.toolkit-console-body em { color: #8293a2; font-style: normal; }
 .browser-window { position: relative; z-index: 2; width: 68%; min-height: 210px; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); box-shadow: 13px 13px 0 var(--ink); }
 .browser-bar { display: flex; gap: 6px; padding: 12px; border-bottom: 2px solid var(--ink); }
 .browser-bar i { width: 8px; height: 8px; border: 1px solid var(--ink); border-radius: 50%; }
@@ -141,6 +154,7 @@ nav a:hover { opacity: .55; }
 .project-tags span { padding: 8px 11px; border: 1px solid rgba(255,255,255,.25); color: #c8d0d6; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
 .project-link { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding: 15px 0; border-top: 1px solid rgba(255,255,255,.2); color: var(--acid); font-size: 12px; font-weight: 700; letter-spacing: .04em; }
 .project-link:hover { color: #fff; }
+.project-links { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .project-note { display: flex; gap: 18px; align-items: center; margin: 50px 0 0; color: #aeb8c1; font-size: 13px; line-height: 1.6; }
 .project-note span { display: grid; place-items: center; flex: 0 0 auto; width: 34px; height: 34px; border: 1px solid var(--acid); color: var(--acid); font-size: 20px; }
 
@@ -236,6 +250,8 @@ footer h2 { max-width: 750px; margin: 0; font-size: clamp(42px, 5vw, 74px); line
   .about, .strengths { grid-template-columns: 1fr; }
   .strengths-heading { align-items: flex-start; flex-direction: column; }
   .about-grid, .projects-heading, .projects-grid { grid-template-columns: 1fr; }
+  .project-tile-featured { grid-column: auto; display: block; }
+  .project-tile-featured .project-visual { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
   .case-section-heading { grid-template-columns: 1fr; }
   .case-body { margin-left: 0; }
   .case-meta, .case-facts { grid-template-columns: 1fr 1fr; }

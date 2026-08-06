@@ -6,38 +6,30 @@ A responsive portfolio presenting my technical interests, practical projects and
 
 ## Projects
 
-### Personal portfolio website
-
-A responsive static website built to present my work clearly to recruiters and hiring managers. It includes accessible navigation, a persistent dark-mode preference and a layout designed for desktop and mobile devices.
-
 ### IT Operations Toolkit
 
 A live multipage Python and Streamlit application containing an IPv4 subnet calculator, deterministic text-log analyser and transparent support-ticket prioritiser. Reusable logic is separated from the interface and covered by 30 unit tests.
 
 [Open the live toolkit](https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/) · [View the source repository](https://github.com/abrahamkaunda-create/it-operations-toolkit)
 
-### pfSense network security case study
+### Personal portfolio website
 
-A recruiter-facing summary of my final-year university project examining pfSense in a virtualised network laboratory. The retained evidence shows a VMware-hosted pfSense Community Edition instance, WAN/LAN/LAN2 interfaces, DHCP configuration and the submitted network topology.
+A responsive static website built to present my work clearly. It includes accessible navigation, a persistent dark-mode preference and layouts for desktop and mobile devices.
 
-The case study also discusses the wider firewall, NAT, VPN, IDS/IPS, usability and performance areas documented in the project report while clearly identifying the limits of the surviving evidence.
+### pfSense Network Security Lab: Configuration and Troubleshooting
+
+A recruiter-facing case study of my final-year university project using pfSense CE 2.7.2 in a VMware laboratory. It covers DHCP and DNS services, firewall policy, NAT, a two-gateway Tier 1 group and WireGuard configuration.
+
+The page clearly separates configuration from verified outcomes. Its main troubleshooting retrospective explains why the retained WireGuard evidence supports an unsuccessful handshake—not a working remote-access VPN—and how I would investigate the issue now.
 
 ## Technologies
-
-Portfolio website:
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
 - GitHub Actions and GitHub Pages
 
-Linked toolkit project:
-
-- Python
-- Streamlit
-- Standard-library unit testing
-
-The portfolio itself remains a static website with no frontend framework, package manager, database or server-side dependency.
+The portfolio is a static website with no frontend framework, package manager, database or server-side dependency.
 
 ## Project structure
 
@@ -47,7 +39,10 @@ The portfolio itself remains a static website with no frontend framework, packag
 ├── assets/
 │   ├── favicon.svg                     # Website icon
 │   ├── pfsense-dhcp.png                # Retained DHCP configuration screenshot
-│   └── pfsense-topology.png            # Submitted network topology diagram
+│   ├── pfsense-lab-topology.svg         # Recreated, simplified lab topology
+│   ├── pfsense-multi-wan.png            # Retained Tier 1 gateway-group status
+│   ├── pfsense-wireguard-nat.png        # Retained outbound NAT configuration
+│   └── pfsense-wireguard-status.png     # Redacted unsuccessful handshake evidence
 ├── .nojekyll                           # Disables Jekyll processing
 ├── index.html                          # Main portfolio page
 ├── pfsense-project.html                # pfSense project case study

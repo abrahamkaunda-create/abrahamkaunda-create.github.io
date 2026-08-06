@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title description">
+  <title id="title">Simplified pfSense virtual lab topology</title>
+  <description id="description">A recreated diagram showing two upstream WAN paths entering a pfSense virtual machine, a protected LAN, and Windows Server, Ubuntu and Kali Linux lab systems.</description>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d6ff3f"/>
+    </marker>
+    <style>
+      .label { font: 700 20px Arial, Helvetica, sans-serif; fill: #f4f1e9; }
+      .small { font: 500 15px Arial, Helvetica, sans-serif; fill: #aeb8c1; }
+      .tiny { font: 700 12px Arial, Helvetica, sans-serif; fill: #d6ff3f; letter-spacing: 1.5px; }
+      .node { fill: #132235; stroke: #617080; stroke-width: 2; }
+      .core { fill: #123c68; stroke: #d6ff3f; stroke-width: 4; }
+      .path { fill: none; stroke: #d6ff3f; stroke-width: 3; marker-end: url(#arrow); }
+      .soft-path { fill: none; stroke: #617080; stroke-width: 2; stroke-dasharray: 10 10; }
+    </style>
+  </defs>
+  <rect width="1400" height="760" fill="#101c2b"/>
+  <text x="70" y="72" class="tiny">RECREATED LAB TOPOLOGY · SIMPLIFIED FROM RETAINED REPORT</text>
+
+  <rect x="78" y="240" width="220" height="122" rx="10" class="node"/>
+  <text x="188" y="290" text-anchor="middle" class="label">Upstream network</text>
+  <text x="188" y="322" text-anchor="middle" class="small">Virtual WAN paths</text>
+
+  <path d="M298 270 H470" class="path"/>
+  <path d="M298 334 H470" class="path"/>
+  <text x="376" y="253" text-anchor="middle" class="tiny">WAN1</text>
+  <text x="376" y="365" text-anchor="middle" class="tiny">WAN2</text>
+
+  <rect x="470" y="205" width="300" height="196" rx="12" class="core"/>
+  <text x="620" y="273" text-anchor="middle" class="label">pfSense CE 2.7.2</text>
+  <text x="620" y="310" text-anchor="middle" class="small">VMware virtual machine</text>
+  <text x="620" y="346" text-anchor="middle" class="small">Firewall · NAT · DHCP · DNS</text>
+  <text x="620" y="374" text-anchor="middle" class="small">Gateway group · WireGuard</text>
+
+  <path d="M770 302 H930" class="path"/>
+  <text x="850" y="282" text-anchor="middle" class="tiny">LAN · 192.168.1.0/24</text>
+
+  <rect x="930" y="180" width="390" height="244" rx="12" class="node"/>
+  <text x="1125" y="228" text-anchor="middle" class="label">Protected lab network</text>
+  <rect x="964" y="272" width="102" height="82" rx="8" class="node"/>
+  <rect x="1074" y="272" width="102" height="82" rx="8" class="node"/>
+  <rect x="1184" y="272" width="102" height="82" rx="8" class="node"/>
+  <text x="1015" y="306" text-anchor="middle" class="small">Windows</text>
+  <text x="1015" y="330" text-anchor="middle" class="small">Server</text>
+  <text x="1125" y="319" text-anchor="middle" class="small">Ubuntu</text>
+  <text x="1235" y="306" text-anchor="middle" class="small">Kali</text>
+  <text x="1235" y="330" text-anchor="middle" class="small">Linux</text>
+  <text x="1125" y="393" text-anchor="middle" class="small">DHCP pool: 192.168.1.10–192.168.1.245</text>
+
+  <path d="M620 401 V548 H930" class="soft-path"/>
+  <rect x="930" y="500" width="390" height="128" rx="12" class="node"/>
+  <text x="1125" y="550" text-anchor="middle" class="label">WireGuard test network</text>
+  <text x="1125" y="584" text-anchor="middle" class="small">Tunnel 10.0.0.1/24 · Mobile peer 10.0.0.2/32</text>
+  <text x="1125" y="609" text-anchor="middle" class="small">Configured, but no verified handshake</text>
+
+  <text x="70" y="704" class="small">This diagram communicates the retained lab structure; it is not a production network design or a claim of successful VPN connectivity.</text>
+</svg>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A recruiter-friendly case study of Abraham Kaunda's final-year pfSense firewall project, based on the submitted university report.">
+    <meta name="description" content="Abraham Kaunda's pfSense network security lab case study covering virtual network configuration, DHCP, DNS, firewall policy, multi-WAN routing and a WireGuard troubleshooting retrospective.">
     <meta name="theme-color" content="#101c2b">
-    <title>pfSense Firewall Case Study | Abraham Kaunda</title>
+    <title>pfSense Network Security Lab | Abraham Kaunda</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -18,8 +18,9 @@
           <span>Abraham Kaunda</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="index.html#about">About</a>
-          <a href="index.html#projects">Projects</a>
+          <a href="#environment">Environment</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#retrospective">Troubleshooting</a>
           <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
             <span class="theme-icon" aria-hidden="true">☾</span>
           </button>
@@ -29,145 +30,272 @@
 
       <section class="case-hero">
         <p class="eyebrow">Final-year project · University of Roehampton · 2024</p>
-        <h1>pfSense Firewall for Open-Source Network Security</h1>
+        <h1>pfSense Network Security Lab: Configuration and Troubleshooting</h1>
         <p class="case-lead">
-          A virtualised network-security project examining how pfSense could be
-          configured and evaluated for smaller organisations and home-office
-          environments, with attention to security, functionality, usability
-          and performance trade-offs.
+          An undergraduate VMware lab exploring pfSense CE 2.7.2 through virtual
+          network configuration, DHCP and DNS services, firewall policy, multi-WAN
+          routing and WireGuard VPN configuration. The project developed my
+          understanding of network security, rule design, NAT and structured
+          troubleshooting.
         </p>
         <div class="case-actions">
-          <a class="button button-primary" href="#evidence">View the evidence <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="#evidence">Review the evidence <span aria-hidden="true">↓</span></a>
           <a class="button button-secondary" href="index.html#projects">Back to projects</a>
         </div>
         <div class="case-meta" aria-label="Project summary">
-          <div><span>Project type</span><strong>Academic virtual lab</strong></div>
-          <div><span>Primary platform</span><strong>pfSense on VMware</strong></div>
-          <div><span>Network design</span><strong>WAN, LAN and LAN2</strong></div>
-          <div><span>Evidence source</span><strong>Submitted BSc report</strong></div>
+          <div><span>Project type</span><strong>Undergraduate virtual lab</strong></div>
+          <div><span>Environment</span><strong>VMware Workstation Pro 17</strong></div>
+          <div><span>Firewall</span><strong>pfSense CE 2.7.2</strong></div>
+          <div><span>Evidence</span><strong>Final report and retained screenshots</strong></div>
+        </div>
+      </section>
+
+      <section class="case-section" id="environment">
+        <div class="case-section-heading">
+          <div class="section-label"><span>01</span> Environment &amp; objectives</div>
+          <h2>A controlled virtual lab for learning how network controls fit together.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The lab placed pfSense between virtual upstream and protected network
+            paths. Windows Server 2022, Ubuntu and Kali Linux systems provided a
+            small environment in which to configure services, examine rule
+            behaviour and practise troubleshooting without presenting the work as
+            a production security deployment.
+          </p>
+          <div class="case-facts case-facts-six" aria-label="Project snapshot">
+            <article class="case-fact"><span>01 / SYSTEMS</span><strong>Windows Server 2022, Ubuntu and Kali Linux</strong></article>
+            <article class="case-fact"><span>02 / NETWORKING</span><strong>WAN, LAN and additional virtual interfaces</strong></article>
+            <article class="case-fact"><span>03 / SERVICES</span><strong>DHCP and DNS configuration</strong></article>
+            <article class="case-fact"><span>04 / POLICY</span><strong>Firewall rules and NAT</strong></article>
+            <article class="case-fact"><span>05 / ROUTING</span><strong>Gateway groups and multi-WAN</strong></article>
+            <article class="case-fact"><span>06 / VPN</span><strong>WireGuard tunnel and mobile peer</strong></article>
+          </div>
+          <figure class="case-figure case-figure-topology">
+            <img src="assets/pfsense-lab-topology.svg" alt="Simplified recreated topology showing two upstream WAN paths entering a pfSense virtual machine, a protected LAN with Windows Server, Ubuntu and Kali Linux, and a WireGuard test network">
+            <figcaption>Recreated topology: a simplified view of the virtual lab described in the report. It communicates structure, not a claim of production readiness or successful VPN connectivity.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" id="configuration">
+        <div class="case-section-heading">
+          <div class="section-label"><span>02</span> Implemented configuration</div>
+          <h2>The work covered addressing, policy, routing and remote-access setup.</h2>
+        </div>
+        <div class="case-body">
+          <div class="scope-grid scope-grid-three">
+            <article class="scope-card">
+              <span class="card-kicker">01 / NETWORK SERVICES</span>
+              <h3>DHCP and DNS</h3>
+              <p>Configured a protected <code>192.168.1.0/24</code> LAN, a DHCP pool and university and public DNS resolvers.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">02 / TRAFFIC CONTROL</span>
+              <h3>Firewall and NAT</h3>
+              <p>Created interface rules and outbound NAT entries while learning how source, destination, protocol and rule order affect traffic.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">03 / ROUTING</span>
+              <h3>Multi-WAN</h3>
+              <p>Placed two online gateways in the same Tier 1 group. This represents a load-balancing arrangement rather than evidence of tested failover.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">04 / REMOTE ACCESS</span>
+              <h3>WireGuard</h3>
+              <p>Created a tunnel, mobile peer, WAN rule and outbound NAT configuration. The service ran, but the peer did not establish a handshake.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">05 / PACKAGE</span>
+              <h3>Squid</h3>
+              <p>Completed package installation. The retained evidence does not demonstrate a tested or verified content-filtering policy.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">06 / REPORT-ONLY AREAS</span>
+              <h3>IPsec and IDS/IPS</h3>
+              <p>Discussed in the report, but not presented here as completed outcomes because insufficient configuration and test evidence remains.</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="case-section" id="evidence">
         <div class="case-section-heading">
-          <div class="section-label"><span>01</span> Verified setup</div>
-          <h2>What the retained project evidence directly shows.</h2>
+          <div class="section-label"><span>03</span> Evidence &amp; outcomes</div>
+          <h2>What the retained material supports—and what it does not.</h2>
         </div>
         <div class="case-body">
           <p>
-            The submitted report contains two pfSense administration screenshots
-            and a network diagram. Together they directly evidence a VMware-hosted
-            pfSense Community Edition instance, three assigned interfaces and a
-            configured DHCP service for the protected LAN.
+            Separating configuration from verified outcomes is important. The table
+            below records only what can reasonably be supported by the final report
+            and surviving screenshots.
           </p>
-          <div class="case-facts">
-            <article class="case-fact"><span>01 / PLATFORM</span><strong>VMware virtual machine</strong></article>
-            <article class="case-fact"><span>02 / FIREWALL</span><strong>pfSense CE 2.7.2</strong></article>
-            <article class="case-fact"><span>03 / INTERFACES</span><strong>WAN, LAN and LAN2</strong></article>
-            <article class="case-fact"><span>04 / LAN SERVICE</span><strong>DHCP on 192.168.1.0/24</strong></article>
-          </div>
-          <div class="case-visual-grid">
-            <figure class="case-figure">
-              <img src="assets/pfsense-dhcp.png" alt="pfSense DHCP Server settings showing DHCP enabled on the LAN interface with an address pool from 192.168.1.10 to 192.168.1.245">
-              <figcaption>Retained project screenshot: DHCP enabled on the LAN interface with a defined address pool.</figcaption>
-            </figure>
-            <figure class="case-figure">
-              <img src="assets/pfsense-topology.png" alt="Network diagram showing internet traffic passing through pfSense to separate WAN and LAN switches and client devices">
-              <figcaption>Submitted topology diagram: pfSense positioned between the external connection and two internal network paths.</figcaption>
-            </figure>
+          <div class="evidence-table-wrap" tabindex="0" aria-label="Scrollable evidence and outcomes table">
+            <table class="evidence-table">
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">What the evidence supports</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">DHCP</th><td>Configured on <code>192.168.1.0/24</code> with an address pool of <code>192.168.1.10–192.168.1.245</code>.</td></tr>
+                <tr><th scope="row">DNS</th><td>University and public DNS resolvers were configured.</td></tr>
+                <tr><th scope="row">Multi-WAN</th><td>Two gateways were placed in a Tier 1 gateway group and shown online.</td></tr>
+                <tr><th scope="row">WireGuard</th><td>Tunnel, peer, firewall and outbound NAT configuration were created.</td></tr>
+                <tr><th scope="row">WireGuard result</th><td>The tunnel was running, but the peer never completed a handshake and transferred no traffic.</td></tr>
+                <tr><th scope="row">Squid</th><td>Package installation was completed.</td></tr>
+                <tr><th scope="row">IPsec and IDS/IPS</th><td>Discussed in the report, but insufficient retained configuration or test evidence remains.</td></tr>
+                <tr><th scope="row">Performance</th><td>Qualitative conclusions only; no raw measurements or dataset were retained.</td></tr>
+              </tbody>
+            </table>
           </div>
           <aside class="evidence-note">
             <h3>Evidence boundary</h3>
             <p>
-              The original virtual machines, configuration export and raw benchmark
-              dataset are not currently retained. The report documents broader
-              implementation and testing, but this page does not invent exact
-              throughput, latency or attack-blocking figures that cannot be checked
-              from the surviving evidence.
+              The original virtual machines, configuration exports and raw
+              performance data were not retained. This page therefore does not
+              claim a working remote-access VPN, verified IPsec or IDS/IPS testing,
+              measured throughput or latency, proven attack blocking, or tested
+              failover.
             </p>
           </aside>
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="screenshots">
         <div class="case-section-heading">
-          <div class="section-label"><span>02</span> Project scope</div>
-          <h2>Configuration work and technical areas documented.</h2>
+          <div class="section-label"><span>04</span> Retained evidence</div>
+          <h2>Four screenshots that demonstrate the actual configuration and result.</h2>
+        </div>
+        <div class="case-body">
+          <div class="case-visual-grid case-visual-grid-evidence">
+            <figure class="case-figure">
+              <img src="assets/pfsense-dhcp.png" loading="lazy" alt="pfSense DHCP settings showing DHCP enabled on the LAN interface, subnet 192.168.1.0 slash 24 and pool 192.168.1.10 to 192.168.1.245">
+              <figcaption><strong>DHCP configuration.</strong> LAN addressing and the retained client pool are visible.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/pfsense-multi-wan.png" loading="lazy" alt="pfSense gateway group status showing WAN1 DHCP and WAN2 DHCP online together at Tier 1">
+              <figcaption><strong>Gateway group status.</strong> Both links are online at Tier 1; this supports load balancing, not proof of true failover.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/pfsense-wireguard-nat.png" loading="lazy" alt="pfSense outbound NAT entry showing WAN1, IPv4 and source network 10.0.0.0 slash 24 translated to the WAN1 address">
+              <figcaption><strong>WireGuard outbound NAT.</strong> Traffic from <code>10.0.0.0/24</code> was configured to translate through WAN1.</figcaption>
+            </figure>
+            <figure class="case-figure case-figure-observation">
+              <img src="assets/pfsense-wireguard-status.png" loading="lazy" alt="pfSense WireGuard status showing tunnel tun wg0 running on port 51820, a mobile peer with latest handshake never, and zero bytes received and transmitted">
+              <figcaption><strong>Troubleshooting observation.</strong> The tunnel is present, but “Latest Handshake” is “never” and both RX and TX remain at <code>0 B</code>. Key identifiers have been redacted.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="retrospective">
+        <div class="case-section-heading">
+          <div class="section-label"><span>05</span> Troubleshooting retrospective</div>
+          <h2>The failed WireGuard connection became the most useful learning outcome.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The original investigation attributed the failed connection to
+            university network restrictions. Reviewing the retained evidence later
+            showed that this conclusion was not definitive. The more defensible
+            outcome is a documented unresolved fault with clear next diagnostic
+            steps.
+          </p>
+          <div class="diagnostic-grid">
+            <article class="diagnostic-card">
+              <span>01 / OBSERVED</span>
+              <h3>Configuration existed</h3>
+              <p>The tunnel used <code>10.0.0.1/24</code>, the mobile peer used <code>10.0.0.2/32</code>, UDP port <code>51820</code> was selected and outbound NAT covered <code>10.0.0.0/24</code>.</p>
+            </article>
+            <article class="diagnostic-card">
+              <span>02 / RESULT</span>
+              <h3>No handshake occurred</h3>
+              <p>pfSense showed the tunnel running, but the peer endpoint was absent, the latest handshake was “never”, and both receive and transmit counters remained at zero.</p>
+            </article>
+            <article class="diagnostic-card">
+              <span>03 / UNCERTAINTY</span>
+              <h3>Blocking was not proven</h3>
+              <p>The external port checker shown in the report tested TCP, while WireGuard uses UDP. Upstream NAT and port forwarding were also not conclusively verified.</p>
+            </article>
+          </div>
+          <aside class="evidence-note evidence-note-warning">
+            <h3>A rule that required further validation</h3>
+            <p>
+              The retained WAN rule appears to use the WAN1 address as the
+              <strong>source</strong>. Inbound VPN traffic would normally arrive from
+              an external source and target the firewall's WAN address. That does
+              not by itself prove the root cause, but it is a concrete configuration
+              issue I would validate before blaming the upstream network.
+            </p>
+          </aside>
+          <div class="diagnostic-plan">
+            <h3>How I would investigate it now</h3>
+            <ol>
+              <li><span>01</span><div><strong>Correct and review the WAN rule.</strong> Confirm UDP, destination WAN address and port <code>51820</code>, with an appropriate external source scope.</div></li>
+              <li><span>02</span><div><strong>Capture UDP traffic on WAN.</strong> Use pfSense packet capture to determine whether peer packets reach the firewall at all.</div></li>
+              <li><span>03</span><div><strong>Verify upstream NAT.</strong> Check the upstream device, public address and any required port-forwarding path.</div></li>
+              <li><span>04</span><div><strong>Test independently.</strong> Connect from a separate mobile network to remove the university path from the first comparison.</div></li>
+              <li><span>05</span><div><strong>Define success with evidence.</strong> Confirm a current handshake, a learned endpoint and increasing RX/TX counters before calling the VPN operational.</div></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="limitations">
+        <div class="case-section-heading">
+          <div class="section-label"><span>06</span> Limitations &amp; next iteration</div>
+          <h2>What I would preserve, test and document differently.</h2>
         </div>
         <div class="case-body">
           <div class="scope-grid">
             <article class="scope-card">
-              <h3>Directly evidenced</h3>
+              <span class="card-kicker">CURRENT LIMITATIONS</span>
+              <h3>Evidence that is missing</h3>
               <ul>
-                <li>pfSense running as a VMware virtual machine</li>
-                <li>WAN, LAN and LAN2 interface assignments</li>
-                <li>DHCP enabled for the protected LAN</li>
-                <li>Defined DHCP subnet and address pool</li>
-                <li>Network topology separating external and internal paths</li>
+                <li>Original VMs and pfSense configuration exports</li>
+                <li>Raw throughput, latency and resource-use measurements</li>
+                <li>A verified WireGuard handshake and traffic transfer</li>
+                <li>Sufficient IPsec, IDS/IPS and Squid policy test evidence</li>
+                <li>A controlled outage test proving gateway failover</li>
               </ul>
             </article>
             <article class="scope-card">
-              <h3>Documented in the report</h3>
+              <span class="card-kicker">SECOND ITERATION</span>
+              <h3>A more reproducible lab</h3>
               <ul>
-                <li>Firewall rules using addresses, protocols and ports</li>
-                <li>NAT, port forwarding and stateful traffic filtering</li>
-                <li>IDS/IPS, traffic shaping and content filtering</li>
-                <li>Multi-WAN failover and load-balancing concepts</li>
-                <li>OpenVPN, IPsec and Squid proxy configuration</li>
+                <li>Version and retain sanitised configuration exports</li>
+                <li>Use a written test plan with expected and observed results</li>
+                <li>Record packet captures and relevant firewall logs</li>
+                <li>Collect repeatable before-and-after performance data</li>
+                <li>Test load balancing and Tier 1/Tier 2 failover separately</li>
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="skills">
         <div class="case-section-heading">
-          <div class="section-label"><span>03</span> Evaluation</div>
-          <h2>How the report assessed the firewall.</h2>
+          <div class="section-label"><span>07</span> Skills demonstrated</div>
+          <h2>Technical configuration matters; explaining the evidence matters too.</h2>
         </div>
         <div class="case-body">
-          <p>
-            The report organised the evaluation around security, performance,
-            usability and functionality. It describes allow-and-block rule tests,
-            remote-access checks, content-filtering tests and monitoring of
-            throughput, latency and resource use. Because the submitted document
-            records qualitative conclusions rather than a reproducible numerical
-            results table, the findings below are intentionally expressed without
-            unsupported figures.
-          </p>
-          <div class="finding-grid">
-            <article class="finding-card">
-              <span>01 / SECURITY</span>
-              <h3>Control and visibility</h3>
-              <p>Granular firewall policy, network separation and additional packages offered stronger control than relying only on a basic endpoint firewall.</p>
-            </article>
-            <article class="finding-card">
-              <span>02 / USABILITY</span>
-              <h3>Power adds complexity</h3>
-              <p>The web interface made initial configuration approachable, but rule management, VPNs and advanced features required greater technical understanding.</p>
-            </article>
-            <article class="finding-card">
-              <span>03 / PERFORMANCE</span>
-              <h3>Trade-offs matter</h3>
-              <p>The report observed acceptable behaviour for the lab use case while recognising that complex inspection and heavier traffic can add processing overhead.</p>
-            </article>
+          <div class="skills-demonstrated" aria-label="Skills demonstrated by the project">
+            <span>VMware lab design</span>
+            <span>IPv4 addressing</span>
+            <span>DHCP and DNS</span>
+            <span>Firewall rule design</span>
+            <span>NAT and routing</span>
+            <span>Gateway groups</span>
+            <span>WireGuard configuration</span>
+            <span>Structured troubleshooting</span>
+            <span>Evidence-based reporting</span>
+            <span>Technical documentation</span>
           </div>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div class="case-section-heading">
-          <div class="section-label"><span>04</span> Learning</div>
-          <h2>Challenges, judgement and limitations.</h2>
-        </div>
-        <div class="case-body">
-          <ul class="limitations-list">
-            <li><span>01 /</span><div><strong>Rule interaction:</strong> the report records unexpected traffic blocking when failover and firewall rules interacted, resolved through rule analysis and reordering.</div></li>
-            <li><span>02 /</span><div><strong>VPN troubleshooting:</strong> certificate mismatches, routing and DNS required careful checking during the OpenVPN work.</div></li>
-            <li><span>03 /</span><div><strong>Configuration depth:</strong> IPsec and content-filtering options demonstrated that secure defaults still require informed technical decisions.</div></li>
-            <li><span>04 /</span><div><strong>Evidence limitation:</strong> the report does not preserve raw configuration files or exact benchmark tables, so a future reconstruction would be needed for fully reproducible testing.</div></li>
-            <li><span>05 /</span><div><strong>Academic scope:</strong> this was a controlled university lab, not a production deployment or commercial security assessment.</div></li>
-          </ul>
+          <p class="case-closing">
+            The strongest outcome is not a claim that every feature worked. It is
+            the ability to explain what was configured, what was verified, what
+            failed and how I would investigate the remaining uncertainty.
+          </p>
           <a class="case-return" href="index.html#projects"><span aria-hidden="true">←</span> Return to all projects</a>
         </div>
       </section>

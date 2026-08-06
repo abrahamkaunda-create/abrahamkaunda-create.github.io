@@ -143,12 +143,27 @@
               <div class="toolkit-console">
                 <div class="toolkit-console-bar"><i></i><i></i><i></i><span>it_operations_toolkit.py</span></div>
                 <div class="toolkit-console-body">
-                  <p><b>NET</b><span>192.168.10.0/24</span><em>254 hosts</em></p>
-                  <p><b>LOG</b><span>18 entries parsed</span><em>10 IPs</em></p>
-                  <p><b>P1</b><span>Priority calculated</span><em>16/16</em></p>
+                  <div class="toolkit-demo toolkit-demo-subnet">
+                    <span class="toolkit-demo-label">01 / Subnet calculator</span>
+                    <p><b>INPUT</b><span>192.168.10.25/24</span></p>
+                    <p><b>NET</b><span>192.168.10.0/24</span></p>
+                    <p><b>HOSTS</b><span>192.168.10.1–254</span><em>254 usable</em></p>
+                  </div>
+                  <div class="toolkit-demo toolkit-demo-log">
+                    <span class="toolkit-demo-label">02 / Log analyser</span>
+                    <p><b>READ</b><span>18 entries parsed</span></p>
+                    <p><b>LEVELS</b><span>3 errors · 3 warnings</span></p>
+                    <p><b>IPV4</b><span>10 unique addresses</span><em>extracted</em></p>
+                  </div>
+                  <div class="toolkit-demo toolkit-demo-ticket">
+                    <span class="toolkit-demo-label">03 / Ticket prioritiser</span>
+                    <p><b>ISSUE</b><span>Email service unavailable</span></p>
+                    <p><b>SCORE</b><span>Impact + urgency</span><em>16/16</em></p>
+                    <p><b>RESULT</b><span>Priority calculated</span><em>P1</em></p>
+                  </div>
                 </div>
               </div>
-              <div class="visual-caption"><span>Calculate</span><span>Analyse</span><span>Prioritise</span></div>
+              <div class="visual-caption toolkit-caption"><span>Calculate</span><span>Analyse</span><span>Prioritise</span></div>
             </div>
             <div class="project-copy">
               <p class="project-type">Python web application · IT operations</p>

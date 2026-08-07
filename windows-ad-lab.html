@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Abraham Kaunda's isolated Windows IT support and Active Directory lab using Windows Server 2025, Windows 11, DNS, Group Policy, SMB permissions and PowerShell.">
+    <meta name="theme-color" content="#101c2b">
+    <title>Windows Active Directory Lab | Abraham Kaunda</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Return to Abraham Kaunda's portfolio">
+          <span class="brand-mark">AK</span>
+          <span>Abraham Kaunda</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#environment">Environment</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#incidents">Incidents</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">☾</span>
+          </button>
+          <a class="nav-cta" href="mailto:abrahamkaunda@gmail.com">Contact</a>
+        </nav>
+      </header>
+
+      <section class="case-hero">
+        <p class="eyebrow">Windows infrastructure · IT support lab</p>
+        <h1>Windows IT Support and Active Directory Lab</h1>
+        <p class="case-lead">
+          An isolated VMware environment built to practise Windows domain
+          administration and common support tasks. I configured Active Directory,
+          DNS, Group Policy, role-based file access and a small PowerShell user-
+          provisioning workflow, then documented what was tested and what the
+          retained evidence can prove.
+        </p>
+        <div class="case-actions">
+          <a class="button button-primary" href="#evidence">Review the evidence <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://github.com/abrahamkaunda-create/windows-ad-lab" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="index.html#projects">Back to projects</a>
+        </div>
+        <div class="case-meta" aria-label="Project summary">
+          <div><span>Project type</span><strong>Isolated VMware learning lab</strong></div>
+          <div><span>Server</span><strong>Windows Server 2025</strong></div>
+          <div><span>Client</span><strong>Windows 11 Enterprise Evaluation</strong></div>
+          <div><span>Domain</span><strong>corp.local</strong></div>
+        </div>
+      </section>
+
+      <section class="case-section" id="environment">
+        <div class="case-section-heading">
+          <div class="section-label"><span>01</span> Environment</div>
+          <h2>One domain controller and one client on an isolated host-only network.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The lab used fictional users and a VMware host-only network with no
+            default gateway. It was designed for controlled learning rather than
+            production use or internet-facing services.
+          </p>
+          <div class="case-facts case-facts-six" aria-label="Lab configuration">
+            <article class="case-fact"><span>01 / NETWORK</span><strong>192.168.50.0/24 host-only network</strong></article>
+            <article class="case-fact"><span>02 / DOMAIN</span><strong>corp.local</strong></article>
+            <article class="case-fact"><span>03 / DC01</span><strong>192.168.50.10 · AD DS and DNS</strong></article>
+            <article class="case-fact"><span>04 / CLIENT01</span><strong>192.168.50.20 · domain joined</strong></article>
+            <article class="case-fact"><span>05 / GROUPS</span><strong>GG_Finance and GG_IT_Support</strong></article>
+            <article class="case-fact"><span>06 / FILE SHARE</span><strong>\\DC01\Finance</strong></article>
+          </div>
+          <figure class="case-figure case-figure-topology">
+            <img src="assets/windows-ad-lab-topology.svg" alt="Diagram showing domain controller DC01 and Windows client CLIENT01 connected through an isolated VMware host-only network for the corp.local domain">
+            <figcaption>Recreated topology based on the documented lab: <code>DC01</code> provided AD DS, DNS and the Finance share to domain-joined <code>CLIENT01</code>.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" id="configuration">
+        <div class="case-section-heading">
+          <div class="section-label"><span>02</span> Configuration</div>
+          <h2>Identity, policy and file access were configured as connected parts of one small domain.</h2>
+        </div>
+        <div class="case-body">
+          <div class="scope-grid scope-grid-three">
+            <article class="scope-card">
+              <span class="card-kicker">01 / DIRECTORY</span>
+              <h3>Active Directory</h3>
+              <p>Created the <code>corp.local</code> forest, an OU structure for users, groups, computers and service accounts, and fictional role-based accounts.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">02 / NAME SERVICES</span>
+              <h3>DNS and domain join</h3>
+              <p>Configured <code>CLIENT01</code> to use <code>DC01</code> as DNS, verified name resolution and joined the Windows 11 client to the domain.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">03 / POLICY</span>
+              <h3>Group Policy</h3>
+              <p>Linked <code>GPO-Client-Security-Baseline</code> to the Computers OU and tested the policy that hides the last signed-in user.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">04 / ACCESS</span>
+              <h3>SMB and NTFS</h3>
+              <p>Assigned Finance access through <code>GG_Finance</code>, tested permitted read/write activity and tested denial for a non-member.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">05 / AUTOMATION</span>
+              <h3>PowerShell</h3>
+              <p>Created a parameterised script for one-user provisioning and department-group assignment, then tested it with Daniel Reed.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">06 / SUPPORT</span>
+              <h3>Troubleshooting</h3>
+              <p>Investigated and repaired a broken computer-domain secure channel, recording the checks, resolution and verification.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="evidence">
+        <div class="case-section-heading">
+          <div class="section-label"><span>03</span> Evidence &amp; outcomes</div>
+          <h2>What was demonstrated, with the evidence boundary stated beside it.</h2>
+        </div>
+        <div class="case-body">
+          <div class="evidence-table-wrap" tabindex="0" aria-label="Scrollable evidence table">
+            <table class="evidence-table">
+              <thead>
+                <tr><th scope="col">Area</th><th scope="col">Supported outcome</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Domain controller</th><td><code>DC01</code>, <code>corp.local</code>, <code>192.168.50.10</code> and DNS resolution are visible in retained evidence.</td></tr>
+                <tr><th scope="row">Directory structure</th><td>Corp OUs and the <code>GG_Finance</code> and <code>GG_IT_Support</code> global security groups are visible.</td></tr>
+                <tr><th scope="row">Client networking</th><td><code>CLIENT01</code> used <code>192.168.50.20</code>, DNS <code>192.168.50.10</code>, and reached and resolved <code>DC01</code>.</td></tr>
+                <tr><th scope="row">Group Policy</th><td>The baseline GPO appears in computer policy results and the sign-in screen shows “Other user”.</td></tr>
+                <tr><th scope="row">Finance access</th><td>NTFS entries, a successful folder-use test and an access-denied test were retained. User context comes from the documented test sequence.</td></tr>
+                <tr><th scope="row">PowerShell user</th><td><code>Get-ADUser</code> shows Daniel Reed enabled with department IT. The selected screenshots do not independently show his group membership.</td></tr>
+                <tr><th scope="row">Secure-channel repair</th><td>The fault and successful repair were documented, but the selected public evidence does not include the secure-channel output.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class="evidence-note">
+            <h3>Evidence boundary</h3>
+            <p>
+              The File Explorer screenshots do not display the signed-in user, so
+              the Sarah and James identities come from the recorded test sequence.
+              Similarly, Daniel's group assignment and the secure-channel result
+              are documented test outcomes, not claims independently visible in
+              the selected screenshots.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="case-section" id="screenshots">
+        <div class="case-section-heading">
+          <div class="section-label"><span>04</span> Retained screenshots</div>
+          <h2>Configuration and test evidence from the completed environment.</h2>
+        </div>
+        <div class="case-body">
+          <div class="case-visual-grid case-visual-grid-evidence">
+            <figure class="case-figure">
+              <img src="assets/windows-ad/14-domain-controller-verification.png" loading="lazy" alt="Windows Server verification showing DC01 in corp.local with address 192.168.50.10 and successful DNS resolution">
+              <figcaption><strong>Domain-controller verification.</strong> <code>DC01</code>, its domain, address and DNS resolution are visible.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/16-active-directory-ou-structure.png" loading="lazy" alt="Active Directory Users and Computers showing the Corp organisational units for computers, groups, service accounts and users">
+              <figcaption><strong>OU structure.</strong> The Corp hierarchy separates users, groups, computers and service accounts.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/17-active-directory-security-groups.png" loading="lazy" alt="Active Directory Users and Computers showing GG Finance and GG IT Support global security groups">
+              <figcaption><strong>Role-based groups.</strong> <code>GG_Finance</code> and <code>GG_IT_Support</code> are shown as global security groups.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/22-CLIENT01-static-IP-and-connectivity.png" loading="lazy" alt="Windows 11 CLIENT01 command output showing its static address, DC01 as DNS, connectivity and name resolution">
+              <figcaption><strong>CLIENT01 networking.</strong> Static addressing, DNS, connectivity and name resolution were checked. The client used a Windows evaluation installation.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/28-GPO-applied-gpresult.png" loading="lazy" alt="Computer gpresult output listing GPO Client Security Baseline as an applied Group Policy Object">
+              <figcaption><strong>Policy result.</strong> <code>GPO-Client-Security-Baseline</code> appears in the computer policy output.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/29-GPO-login-screen-result.png" loading="lazy" alt="Windows sign-in screen showing Other user and the CORP domain sign-in context">
+              <figcaption><strong>Sign-in-screen test.</strong> “Other user” is displayed instead of the last account, matching the configured policy.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/32-finance-ntfs-permissions.png" loading="lazy" alt="Command output showing NTFS permissions for the Finance folder including GG Finance modify access">
+              <figcaption><strong>Finance NTFS permissions.</strong> <code>GG_Finance</code> has Modify while administrators and SYSTEM retain Full Control.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/33-sarah-finance-access-success.png" loading="lazy" alt="File Explorer showing the Finance share open with Finance Readme and Sarah Test files">
+              <figcaption><strong>Permitted access test.</strong> The folder and created test file are visible; this was captured during Sarah Mitchell's documented test.</figcaption>
+            </figure>
+            <figure class="case-figure case-figure-observation">
+              <img src="assets/windows-ad/34-james-finance-access-denied.png" loading="lazy" alt="Windows network error showing access denied when opening the Finance share">
+              <figcaption><strong>Denied access test.</strong> The denial is visible; this was captured during James Carter's documented non-Finance test.</figcaption>
+            </figure>
+            <figure class="case-figure">
+              <img src="assets/windows-ad/36a-powershell-created-user.png" loading="lazy" alt="PowerShell Get ADUser output showing Daniel Reed with department IT and enabled status True">
+              <figcaption><strong>Provisioned user.</strong> <code>Get-ADUser</code> independently shows Daniel Reed, department IT and an enabled account.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="incidents">
+        <div class="case-section-heading">
+          <div class="section-label"><span>05</span> Support incidents</div>
+          <h2>Three short records connect symptoms, investigation, resolution and verification.</h2>
+        </div>
+        <div class="case-body">
+          <div class="diagnostic-grid">
+            <article class="diagnostic-card">
+              <span>01 / DOMAIN TRUST</span>
+              <h3>Broken secure channel</h3>
+              <p>Checked DNS and client status, repaired the trust from elevated PowerShell, restarted and documented the successful follow-up test.</p>
+              <a class="project-link case-document-link" href="https://github.com/abrahamkaunda-create/windows-ad-lab/blob/main/documentation/support-incident-01-secure-channel.md" target="_blank" rel="noopener noreferrer">Read incident <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="diagnostic-card">
+              <span>02 / ACCESS CONTROL</span>
+              <h3>Finance permissions</h3>
+              <p>Verified group-based Finance access using SMB and NTFS, including one permitted account and one deliberately denied account.</p>
+              <a class="project-link case-document-link" href="https://github.com/abrahamkaunda-create/windows-ad-lab/blob/main/documentation/support-incident-02-finance-access.md" target="_blank" rel="noopener noreferrer">Read incident <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="diagnostic-card">
+              <span>03 / AUTOMATION</span>
+              <h3>User provisioning</h3>
+              <p>Tested a parameterised user-creation workflow, then removed the original hard-coded password from the public script.</p>
+              <a class="project-link case-document-link" href="https://github.com/abrahamkaunda-create/windows-ad-lab/blob/main/documentation/support-incident-03-user-provisioning.md" target="_blank" rel="noopener noreferrer">Read incident <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="automation">
+        <div class="case-section-heading">
+          <div class="section-label"><span>06</span> PowerShell &amp; security</div>
+          <h2>The useful automation remains public; the exposed lab password does not.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The original tested script accepted a first name, last name, username
+            and either IT or Finance as the department. It created the account in
+            the Corp Users OU and selected the matching role group. Before
+            publication, I replaced the hard-coded lab password with a secure
+            interactive prompt.
+          </p>
+          <aside class="evidence-note evidence-note-warning">
+            <h3>Published-script correction</h3>
+            <p>
+              The password-bearing script screenshot is intentionally excluded.
+              The public script uses <code>Read-Host -AsSecureString</code>. This
+              updated copy was statically reviewed, but the completed VMs were not
+              reopened solely to rerun that security change.
+            </p>
+          </aside>
+          <div class="case-actions">
+            <a class="button button-primary" href="https://github.com/abrahamkaunda-create/windows-ad-lab/blob/main/scripts/New-CorpUser.ps1" target="_blank" rel="noopener noreferrer">View the script <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/abrahamkaunda-create/windows-ad-lab" target="_blank" rel="noopener noreferrer">Browse all project files <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="limitations">
+        <div class="case-section-heading">
+          <div class="section-label"><span>07</span> Limitations &amp; skills</div>
+          <h2>A practical learning lab with a deliberately honest scope.</h2>
+        </div>
+        <div class="case-body">
+          <ul class="limitations-list">
+            <li><span>01</span><div>The environment was an isolated two-VM lab, not a production or commercial deployment.</div></li>
+            <li><span>02</span><div>The provisioning script was tested with one fictional user and two supported departments.</div></li>
+            <li><span>03</span><div>CSV import, logging, rollback, backups, auditing and formal change control were outside scope.</div></li>
+            <li><span>04</span><div>The selected evidence does not independently display every documented user context or result.</div></li>
+          </ul>
+          <div class="skills-demonstrated" aria-label="Skills demonstrated by the project">
+            <span>Windows Server 2025</span>
+            <span>Active Directory</span>
+            <span>DNS</span>
+            <span>Group Policy</span>
+            <span>Windows 11</span>
+            <span>SMB and NTFS</span>
+            <span>PowerShell</span>
+            <span>VMware</span>
+            <span>Access control</span>
+            <span>Troubleshooting</span>
+            <span>Technical documentation</span>
+          </div>
+          <p class="case-closing">
+            The project demonstrates that I can build a small Windows domain,
+            verify individual controls, troubleshoot a fault and explain the
+            boundary between retained evidence and a documented test result.
+          </p>
+          <a class="case-return" href="index.html#projects"><span aria-hidden="true">←</span> Return to all projects</a>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <p class="eyebrow">Open to opportunities</p>
+          <h2>Interested in discussing this lab or a junior technical opportunity?</h2>
+        </div>
+        <a class="footer-email" href="mailto:abrahamkaunda@gmail.com">abrahamkaunda@gmail.com <span aria-hidden="true">↗</span></a>
+        <p class="footer-bottom">© 2026 Abraham Kaunda <a href="https://github.com/abrahamkaunda-create" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span>London, United Kingdom</span></p>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

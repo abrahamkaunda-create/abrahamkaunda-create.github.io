@@ -1,54 +1,60 @@
 # Abraham Kaunda — Computer Science Portfolio
 
-A responsive portfolio presenting my technical interests, practical projects and ongoing development as a Computer Science graduate.
+A responsive static portfolio presenting practical software, networking, security and Windows infrastructure projects.
 
 **Live website:** [abrahamkaunda-create.github.io](https://abrahamkaunda-create.github.io/)
 
-## Projects
+## Selected projects
 
 ### IT Operations Toolkit
 
 A live multipage Python and Streamlit application containing an IPv4 subnet calculator, deterministic text-log analyser and transparent support-ticket prioritiser. Reusable logic is separated from the interface and covered by 30 unit tests.
 
-[Open the live toolkit](https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/) · [View the source repository](https://github.com/abrahamkaunda-create/it-operations-toolkit)
+[Open the live toolkit](https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/) · [View source](https://github.com/abrahamkaunda-create/it-operations-toolkit)
+
+### Windows IT Support and Active Directory Lab
+
+An isolated VMware lab using Windows Server 2025, Windows 11 Enterprise Evaluation, Active Directory, DNS, Group Policy, SMB/NTFS permissions and PowerShell. The dedicated case study links retained screenshots to the outcomes they support and clearly states evidence limitations.
+
+[Read the case study](https://abrahamkaunda-create.github.io/windows-ad-lab.html) · [View source](https://github.com/abrahamkaunda-create/windows-ad-lab)
+
+### pfSense Network Security Lab
+
+An evidence-based case study of an undergraduate pfSense CE 2.7.2 VMware lab. It covers DHCP, DNS, firewall policy, NAT, multi-WAN configuration and a retrospective on an unsuccessful WireGuard handshake.
+
+[Read the case study](https://abrahamkaunda-create.github.io/pfsense-project.html)
 
 ### Personal portfolio website
 
-A responsive static website built to present my work clearly. It includes accessible navigation, a persistent dark-mode preference and layouts for desktop and mobile devices.
-
-### pfSense Network Security Lab: Configuration and Troubleshooting
-
-A recruiter-facing case study of my final-year university project using pfSense CE 2.7.2 in a VMware laboratory. It covers DHCP and DNS services, firewall policy, NAT, a two-gateway Tier 1 group and WireGuard configuration.
-
-The page clearly separates configuration from verified outcomes. Its main troubleshooting retrospective explains why the retained WireGuard evidence supports an unsuccessful handshake—not a working remote-access VPN—and how I would investigate the issue now.
+This responsive website uses accessible navigation, a persistent dark-mode preference, subtle reduced-motion-aware animation and layouts for desktop and mobile devices.
 
 ## Technologies
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- GitHub Actions and GitHub Pages
+- Git and GitHub
+- GitHub Pages
 
-The portfolio is a static website with no frontend framework, package manager, database or server-side dependency.
+The portfolio has no frontend framework, package manager, database or server-side dependency.
 
 ## Project structure
 
 ```text
 .
-├── .github/workflows/deploy-pages.yml  # GitHub Pages deployment workflow
 ├── assets/
-│   ├── favicon.svg                     # Website icon
-│   ├── pfsense-dhcp.png                # Retained DHCP configuration screenshot
-│   ├── pfsense-lab-topology.svg         # Recreated, simplified lab topology
-│   ├── pfsense-multi-wan.png            # Retained Tier 1 gateway-group status
-│   ├── pfsense-wireguard-nat.png        # Retained outbound NAT configuration
-│   └── pfsense-wireguard-status.png     # Redacted unsuccessful handshake evidence
-├── .nojekyll                           # Disables Jekyll processing
-├── index.html                          # Main portfolio page
-├── pfsense-project.html                # pfSense project case study
-├── script.js                           # Dark-mode preference and controls
-├── styles.css                          # Design and responsive layout
-└── README.md                           # Repository documentation
+│   ├── windows-ad/                     # Selected Active Directory lab evidence
+│   ├── windows-ad-lab-topology.svg      # Recreated Windows lab topology
+│   ├── pfsense-*.png                    # Selected pfSense lab evidence
+│   ├── pfsense-lab-topology.svg         # Recreated pfSense lab topology
+│   └── favicon.svg                      # Website icon
+├── .nojekyll                            # Disables Jekyll processing
+├── index.html                           # Main portfolio page
+├── windows-ad-lab.html                  # Windows lab case study
+├── pfsense-project.html                 # pfSense lab case study
+├── script.js                            # Theme preference and scroll reveal
+├── styles.css                           # Design, animation and responsive layout
+└── README.md                            # Repository documentation
 ```
 
 ## Run locally
@@ -59,11 +65,11 @@ No installation is required. From the repository directory, run:
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000` in a browser.
+Then open `http://localhost:8000`.
 
 ## Deployment
 
-Changes pushed to the `main` branch are published to GitHub Pages through the included GitHub Actions workflow.
+GitHub Pages publishes the website from the `main` branch. No custom GitHub Actions workflow is required.
 
 ## Contact
 

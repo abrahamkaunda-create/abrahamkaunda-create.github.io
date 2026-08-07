@@ -94,6 +94,8 @@
             <li><b>06</b>VMware &amp; VirtualBox</li>
             <li><b>07</b>pfSense</li>
             <li><b>08</b>Technical documentation</li>
+            <li><b>09</b>Windows Server &amp; Active Directory</li>
+            <li><b>10</b>PowerShell</li>
           </ul>
         </div>
       </section>
@@ -188,6 +190,54 @@
             </div>
           </article>
 
+          <article class="project-tile project-tile-featured project-tile-ad">
+            <div class="project-visual ad-visual" aria-hidden="true">
+              <div class="ad-lab-panel">
+                <div class="ad-lab-bar">
+                  <span>corp.local</span>
+                  <em>isolated VMware lab</em>
+                </div>
+                <div class="ad-topology">
+                  <div class="ad-machine ad-server">
+                    <i></i>
+                    <strong>DC01</strong>
+                    <span>192.168.50.10</span>
+                  </div>
+                  <div class="ad-connection"><b></b></div>
+                  <div class="ad-machine ad-client">
+                    <i></i>
+                    <strong>CLIENT01</strong>
+                    <span>192.168.50.20</span>
+                  </div>
+                  <div class="ad-event ad-event-dns"><b>DNS</b><span>name resolved</span></div>
+                  <div class="ad-event ad-event-gpo"><b>GPO</b><span>policy applied</span></div>
+                  <div class="ad-event ad-event-smb"><b>SMB</b><span>access tested</span></div>
+                </div>
+              </div>
+              <div class="visual-caption ad-caption"><span>Configure</span><span>Validate</span><span>Troubleshoot</span></div>
+            </div>
+            <div class="project-copy">
+              <p class="project-type">Windows infrastructure · IT support lab</p>
+              <h3>Windows Active Directory Lab</h3>
+              <p>
+                Built an isolated Windows domain using Server 2025 and a Windows
+                11 client. I configured Active Directory, DNS, Group Policy and
+                role-based file access, then documented support incidents and a
+                small PowerShell provisioning workflow.
+              </p>
+              <ul>
+                <li><span>01</span> Domain, OU, user, group and client-join configuration</li>
+                <li><span>02</span> Group Policy plus tested SMB and NTFS access control</li>
+                <li><span>03</span> Secure-channel troubleshooting and documented evidence limits</li>
+              </ul>
+              <div class="project-tags"><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Group Policy</span><span>IT support</span></div>
+              <div class="project-links">
+                <a class="project-link" href="windows-ad-lab.html">Read the case study <span aria-hidden="true">↗</span></a>
+                <a class="project-link" href="https://github.com/abrahamkaunda-create/windows-ad-lab" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
           <article class="project-tile project-tile-network">
             <div class="project-visual network-visual" aria-hidden="true">
               <div class="firewall-pill">pf</div>
@@ -234,12 +284,12 @@
               <p>
                 Designed and built this responsive portfolio to present my work
                 clearly. The project uses readable HTML and CSS, GitHub version
-                control and an automated GitHub Pages deployment workflow.
+                control and static publishing through GitHub Pages.
               </p>
               <ul>
                 <li><span>01</span> Responsive layout with accessible navigation</li>
                 <li><span>02</span> Portable static source with no framework dependency</li>
-                <li><span>03</span> Automatic deployment through GitHub Actions</li>
+                <li><span>03</span> Static deployment from the main branch through GitHub Pages</li>
               </ul>
               <div class="project-tags"><span>HTML</span><span>CSS</span><span>GitHub</span><span>GitHub Pages</span></div>
               <a class="project-link" href="https://github.com/abrahamkaunda-create/abrahamkaunda-create.github.io" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>

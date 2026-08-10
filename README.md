@@ -8,7 +8,7 @@ A responsive static portfolio presenting practical software, networking, securit
 
 ### Predictive Maintenance Analytics
 
-A recruiter-facing graduate data science project using the synthetic UCI AI4I 2020 dataset. It demonstrates validated pandas and Parquet preparation, DuckDB SQL analysis, leakage-safe scikit-learn pipelines, evaluation for an imbalanced target, Streamlit and unit testing without claiming production readiness.
+Predictive maintenance analytics dashboard built with Python, DuckDB, scikit-learn and Streamlit using the synthetic UCI AI4I 2020 dataset. It also demonstrates validated pandas and Parquet preparation, leakage-safe modelling, evaluation for an imbalanced target and unit testing without claiming production readiness.
 
 [Open the live dashboard](https://abrahamkaunda-predictive-maintenance.streamlit.app/) · [View source](https://github.com/abrahamkaunda-create/predictive-maintenance-analytics)
 

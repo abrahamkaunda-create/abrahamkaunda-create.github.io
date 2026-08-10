@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Abraham Kaunda's pfSense network security lab case study covering virtual network configuration, DHCP, DNS, firewall policy, multi-WAN routing and a WireGuard troubleshooting retrospective.">
     <meta name="theme-color" content="#101c2b">
+    <meta property="og:title" content="pfSense Network Security Lab | Abraham Kaunda">
+    <meta property="og:description" content="An evidence-led pfSense lab covering virtual networking, firewall policy, multi-WAN routing and WireGuard troubleshooting.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Abraham Kaunda Portfolio">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://abrahamkaunda-create.github.io/pfsense-project.html">
+    <meta property="og:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="pfSense Network Security Lab | Abraham Kaunda">
+    <meta name="twitter:description" content="An evidence-led pfSense lab covering virtual networking, firewall policy, multi-WAN routing and WireGuard troubleshooting.">
+    <meta name="twitter:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta name="twitter:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
     <title>pfSense Network Security Lab | Abraham Kaunda</title>
+    <link rel="canonical" href="https://abrahamkaunda-create.github.io/pfsense-project.html">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -168,19 +184,19 @@
         <div class="case-body">
           <div class="case-visual-grid case-visual-grid-evidence">
             <figure class="case-figure">
-              <img src="assets/pfsense-dhcp.png" loading="lazy" alt="pfSense DHCP settings showing DHCP enabled on the LAN interface, subnet 192.168.1.0 slash 24 and pool 192.168.1.10 to 192.168.1.245">
+              <img src="assets/pfsense-dhcp.webp" loading="lazy" alt="pfSense DHCP settings showing DHCP enabled on the LAN interface, subnet 192.168.1.0 slash 24 and pool 192.168.1.10 to 192.168.1.245">
               <figcaption><strong>DHCP configuration.</strong> LAN addressing and the retained client pool are visible.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/pfsense-multi-wan.png" loading="lazy" alt="pfSense gateway group status showing WAN1 DHCP and WAN2 DHCP online together at Tier 1">
+              <img src="assets/pfsense-multi-wan.webp" loading="lazy" alt="pfSense gateway group status showing WAN1 DHCP and WAN2 DHCP online together at Tier 1">
               <figcaption><strong>Gateway group status.</strong> Both links are online at Tier 1; this supports load balancing, not proof of true failover.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/pfsense-wireguard-nat.png" loading="lazy" alt="pfSense outbound NAT entry showing WAN1, IPv4 and source network 10.0.0.0 slash 24 translated to the WAN1 address">
+              <img src="assets/pfsense-wireguard-nat.webp" loading="lazy" alt="pfSense outbound NAT entry showing WAN1, IPv4 and source network 10.0.0.0 slash 24 translated to the WAN1 address">
               <figcaption><strong>WireGuard outbound NAT.</strong> Traffic from <code>10.0.0.0/24</code> was configured to translate through WAN1.</figcaption>
             </figure>
             <figure class="case-figure case-figure-observation">
-              <img src="assets/pfsense-wireguard-status.png" loading="lazy" alt="pfSense WireGuard status showing tunnel tun wg0 running on port 51820, a mobile peer with latest handshake never, and zero bytes received and transmitted">
+              <img src="assets/pfsense-wireguard-status.webp" loading="lazy" alt="pfSense WireGuard status showing tunnel tun wg0 running on port 51820, a mobile peer with latest handshake never, and zero bytes received and transmitted">
               <figcaption><strong>Troubleshooting observation.</strong> The tunnel is present, but “Latest Handshake” is “never” and both RX and TX remain at <code>0 B</code>. Key identifiers have been redacted.</figcaption>
             </figure>
           </div>

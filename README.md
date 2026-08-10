@@ -32,7 +32,7 @@ An evidence-based case study of an undergraduate pfSense CE 2.7.2 VMware lab. It
 
 ### Personal portfolio website
 
-This responsive website uses accessible navigation, a persistent dark-mode preference, subtle reduced-motion-aware animation and layouts for desktop and mobile devices.
+This responsive website uses accessible navigation, a persistent dark-mode preference, subtle reduced-motion-aware animation, an accessible image lightbox and layouts for desktop and mobile devices. Project evidence is served as optimised WebP images, and the site includes sharing metadata and a custom 404 page.
 
 ## Technologies
 
@@ -51,14 +51,16 @@ The portfolio has no frontend framework, package manager, database or server-sid
 ├── assets/
 │   ├── windows-ad/                     # Selected Active Directory lab evidence
 │   ├── windows-ad-lab-topology.svg      # Recreated Windows lab topology
-│   ├── pfsense-*.png                    # Selected pfSense lab evidence
+│   ├── pfsense-*.webp                   # Optimised pfSense lab evidence
 │   ├── pfsense-lab-topology.svg         # Recreated pfSense lab topology
+│   ├── portfolio-social-preview.png     # Open Graph and social preview card
 │   └── favicon.svg                      # Website icon
 ├── .nojekyll                            # Disables Jekyll processing
 ├── index.html                           # Main portfolio page
+├── 404.html                             # Branded page-not-found response
 ├── windows-ad-lab.html                  # Windows lab case study
 ├── pfsense-project.html                 # pfSense lab case study
-├── script.js                            # Theme preference and scroll reveal
+├── script.js                            # Theme, scroll reveal and image lightbox
 ├── styles.css                           # Design, animation and responsive layout
 └── README.md                            # Repository documentation
 ```

@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Abraham Kaunda's isolated Windows IT support and Active Directory lab using Windows Server 2025, Windows 11, DNS, Group Policy, SMB permissions and PowerShell.">
     <meta name="theme-color" content="#101c2b">
+    <meta property="og:title" content="Windows Active Directory Lab | Abraham Kaunda">
+    <meta property="og:description" content="An evidence-led Windows IT support lab covering Active Directory, DNS, Group Policy, SMB permissions and PowerShell.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Abraham Kaunda Portfolio">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://abrahamkaunda-create.github.io/windows-ad-lab.html">
+    <meta property="og:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Windows Active Directory Lab | Abraham Kaunda">
+    <meta name="twitter:description" content="An evidence-led Windows IT support lab covering Active Directory, DNS, Group Policy, SMB permissions and PowerShell.">
+    <meta name="twitter:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta name="twitter:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
     <title>Windows Active Directory Lab | Abraham Kaunda</title>
+    <link rel="canonical" href="https://abrahamkaunda-create.github.io/windows-ad-lab.html">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -161,43 +177,43 @@
         <div class="case-body">
           <div class="case-visual-grid case-visual-grid-evidence">
             <figure class="case-figure">
-              <img src="assets/windows-ad/14-domain-controller-verification.png" loading="lazy" alt="Windows Server verification showing DC01 in corp.local with address 192.168.50.10 and successful DNS resolution">
+              <img src="assets/windows-ad/14-domain-controller-verification.webp" loading="lazy" alt="Windows Server verification showing DC01 in corp.local with address 192.168.50.10 and successful DNS resolution">
               <figcaption><strong>Domain-controller verification.</strong> <code>DC01</code>, its domain, address and DNS resolution are visible.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/16-active-directory-ou-structure.png" loading="lazy" alt="Active Directory Users and Computers showing the Corp organisational units for computers, groups, service accounts and users">
+              <img src="assets/windows-ad/16-active-directory-ou-structure.webp" loading="lazy" alt="Active Directory Users and Computers showing the Corp organisational units for computers, groups, service accounts and users">
               <figcaption><strong>OU structure.</strong> The Corp hierarchy separates users, groups, computers and service accounts.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/17-active-directory-security-groups.png" loading="lazy" alt="Active Directory Users and Computers showing GG Finance and GG IT Support global security groups">
+              <img src="assets/windows-ad/17-active-directory-security-groups.webp" loading="lazy" alt="Active Directory Users and Computers showing GG Finance and GG IT Support global security groups">
               <figcaption><strong>Role-based groups.</strong> <code>GG_Finance</code> and <code>GG_IT_Support</code> are shown as global security groups.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/22-CLIENT01-static-IP-and-connectivity.png" loading="lazy" alt="Windows 11 CLIENT01 command output showing its static address, DC01 as DNS, connectivity and name resolution">
+              <img src="assets/windows-ad/22-CLIENT01-static-IP-and-connectivity.webp" loading="lazy" alt="Windows 11 CLIENT01 command output showing its static address, DC01 as DNS, connectivity and name resolution">
               <figcaption><strong>CLIENT01 networking.</strong> Static addressing, DNS, connectivity and name resolution were checked. The client used a Windows evaluation installation.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/28-GPO-applied-gpresult.png" loading="lazy" alt="Computer gpresult output listing GPO Client Security Baseline as an applied Group Policy Object">
+              <img src="assets/windows-ad/28-GPO-applied-gpresult.webp" loading="lazy" alt="Computer gpresult output listing GPO Client Security Baseline as an applied Group Policy Object">
               <figcaption><strong>Policy result.</strong> <code>GPO-Client-Security-Baseline</code> appears in the computer policy output.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/29-GPO-login-screen-result.png" loading="lazy" alt="Windows sign-in screen showing Other user and the CORP domain sign-in context">
+              <img src="assets/windows-ad/29-GPO-login-screen-result.webp" loading="lazy" alt="Windows sign-in screen showing Other user and the CORP domain sign-in context">
               <figcaption><strong>Sign-in-screen test.</strong> “Other user” is displayed instead of the last account, matching the configured policy.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/32-finance-ntfs-permissions.png" loading="lazy" alt="Command output showing NTFS permissions for the Finance folder including GG Finance modify access">
+              <img src="assets/windows-ad/32-finance-ntfs-permissions.webp" loading="lazy" alt="Command output showing NTFS permissions for the Finance folder including GG Finance modify access">
               <figcaption><strong>Finance NTFS permissions.</strong> <code>GG_Finance</code> has Modify while administrators and SYSTEM retain Full Control.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/33-sarah-finance-access-success.png" loading="lazy" alt="File Explorer showing the Finance share open with Finance Readme and Sarah Test files">
+              <img src="assets/windows-ad/33-sarah-finance-access-success.webp" loading="lazy" alt="File Explorer showing the Finance share open with Finance Readme and Sarah Test files">
               <figcaption><strong>Permitted access test.</strong> The folder and created test file are visible; this was captured during Sarah Mitchell's documented test.</figcaption>
             </figure>
             <figure class="case-figure case-figure-observation">
-              <img src="assets/windows-ad/34-james-finance-access-denied.png" loading="lazy" alt="Windows network error showing access denied when opening the Finance share">
+              <img src="assets/windows-ad/34-james-finance-access-denied.webp" loading="lazy" alt="Windows network error showing access denied when opening the Finance share">
               <figcaption><strong>Denied access test.</strong> The denial is visible; this was captured during James Carter's documented non-Finance test.</figcaption>
             </figure>
             <figure class="case-figure">
-              <img src="assets/windows-ad/36a-powershell-created-user.png" loading="lazy" alt="PowerShell Get ADUser output showing Daniel Reed with department IT and enabled status True">
+              <img src="assets/windows-ad/36a-powershell-created-user.webp" loading="lazy" alt="PowerShell Get ADUser output showing Daniel Reed with department IT and enabled status True">
               <figcaption><strong>Provisioned user.</strong> <code>Get-ADUser</code> independently shows Daniel Reed, department IT and an enabled account.</figcaption>
             </figure>
           </div>

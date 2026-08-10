@@ -431,6 +431,24 @@ nav a:hover { opacity: .55; }
 .limitations-list span { color: #4d7c0f; font: 400 11px/1.5 monospace; }
 .case-return { display: inline-flex; align-items: center; gap: 12px; margin-top: 38px; font-size: 13px; font-weight: 700; }
 
+.error-page { min-height: 100vh; }
+.error-main { max-width: 1440px; min-height: calc(100vh - 184px); margin: 0 auto; padding: 72px 5vw; }
+.error-panel { display: grid; grid-template-columns: 1.15fr .85fr; min-height: 510px; border: 1px solid var(--line); }
+.error-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(34px, 6vw, 86px); }
+.error-copy h1 { max-width: 760px; margin: 0; font-size: clamp(54px, 7vw, 98px); line-height: .92; letter-spacing: -.065em; font-weight: 500; }
+.error-copy > p:not(.eyebrow) { max-width: 590px; margin: 30px 0 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.error-visual { position: relative; min-height: 420px; overflow: hidden; background-color: var(--blue); background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 46px 46px; color: #fff; }
+.error-code { position: absolute; right: 8%; bottom: 4%; color: var(--acid); font: 700 clamp(110px, 16vw, 220px)/.8 Arial, sans-serif; letter-spacing: -.08em; }
+.error-node { position: absolute; z-index: 2; width: 18px; height: 18px; border: 2px solid var(--acid); border-radius: 50%; background: var(--blue); }
+.error-node-one { top: 17%; left: 16%; }
+.error-node-two { top: 40%; right: 18%; }
+.error-node-three { bottom: 18%; left: 26%; }
+.error-line { position: absolute; z-index: 1; height: 1px; background: rgba(255,255,255,.65); transform-origin: left center; }
+.error-line-one { top: 20%; left: 18%; width: 68%; transform: rotate(18deg); }
+.error-line-two { bottom: 21%; left: 28%; width: 58%; transform: rotate(-34deg); }
+.error-footer { padding-top: 0; }
+.error-footer .footer-bottom { margin-top: 0; padding-top: 26px; border-top: 1px solid var(--line); }
+
 body.lightbox-open { overflow: hidden; }
 .image-lightbox { width: min(96vw, 1500px); max-width: none; height: 94vh; max-height: none; margin: auto; padding: 0; overflow: hidden; border: 1px solid #586675; background: #08111d; color: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.55); }
 .image-lightbox::backdrop { background: rgba(3,8,14,.88); backdrop-filter: blur(4px); }
@@ -527,6 +545,8 @@ footer h2 { max-width: 750px; margin: 0; font-size: clamp(42px, 5vw, 74px); line
   .case-visual-grid, .scope-grid, .scope-grid-three, .finding-grid, .diagnostic-grid { grid-template-columns: 1fr; }
   .projects-heading > p { max-width: 500px; }
   .skill-list { grid-template-columns: 1fr 1fr; }
+  .error-panel { grid-template-columns: 1fr; }
+  .error-visual { min-height: 300px; }
 }
 
 @media (max-width: 620px) {
@@ -574,6 +594,12 @@ footer h2 { max-width: 750px; margin: 0; font-size: clamp(42px, 5vw, 74px); line
   .image-lightbox-caption { padding: 12px 14px; }
   .footer-email { overflow-wrap: anywhere; font-size: 18px; }
   .footer-bottom { gap: 20px; align-items: flex-start; flex-direction: column; }
+  .error-main { min-height: auto; padding-top: 38px; padding-bottom: 50px; }
+  .error-copy { padding: 38px 24px 48px; }
+  .error-copy h1 { font-size: 52px; }
+  .error-copy > p:not(.eyebrow) { font-size: 15px; }
+  .error-visual { min-height: 220px; }
+  .error-code { font-size: 105px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

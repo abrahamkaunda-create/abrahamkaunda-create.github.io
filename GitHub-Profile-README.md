@@ -12,7 +12,7 @@ A responsive static website built to present my work clearly to recruiters and h
 
 ### pfSense network security case study
 
-A recruiter-facing summary of my final-year university project examining pfSense in a virtualised network laboratory. The retained evidence shows a VMware-hosted pfSense Community Edition instance, WAN/LAN/LAN2 interfaces, DHCP configuration and the submitted network topology.
+An evidence-based summary of my final-year university project examining pfSense in a virtualised network laboratory. The retained evidence shows a VMware-hosted pfSense Community Edition instance, WAN/LAN/LAN2 interfaces, DHCP configuration and the submitted network topology.
 
 The case study also discusses the wider firewall, NAT, VPN, IDS/IPS, usability and performance areas documented in the project report while clearly identifying the limits of the surviving evidence.
 

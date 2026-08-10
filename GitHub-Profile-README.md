@@ -1,65 +1,62 @@
-# Abraham Kaunda — Computer Science Portfolio
+# Hi, I'm Abraham Kaunda
 
-A responsive portfolio presenting my technical interests, practical projects and ongoing development as a Computer Science graduate.
+I'm a London-based Computer Science graduate who enjoys turning ideas into working, useful things. My interests span data science, software, web development, networking and systems, and I learn best by building, testing and understanding how the parts fit together.
 
-**Live website:** [abrahamkaunda-create.github.io](https://abrahamkaunda-create.github.io/)
+[View my portfolio](https://abrahamkaunda-create.github.io/) · [Email me](mailto:abrahamkaunda@gmail.com)
 
-## Projects
+## About me
 
-### Personal portfolio website
+- BSc (Hons) Computer Science graduate from the University of Roehampton
+- Interested in practical data, software, infrastructure and networking projects
+- Comfortable learning through hands-on labs, troubleshooting and documentation
+- Open to graduate and junior technology opportunities where I can contribute and continue developing
 
-A responsive static website built to present my work clearly to recruiters and hiring managers. It includes accessible navigation, a persistent dark-mode preference and a layout designed for desktop and mobile devices.
+## Selected work
 
-### pfSense network security case study
+### Predictive Maintenance Analytics
 
-An evidence-based summary of my final-year university project examining pfSense in a virtualised network laboratory. The retained evidence shows a VMware-hosted pfSense Community Edition instance, WAN/LAN/LAN2 interfaces, DHCP configuration and the submitted network topology.
+Predictive maintenance analytics dashboard built with Python, DuckDB, scikit-learn and Streamlit using the synthetic UCI AI4I 2020 dataset. The project includes validated pandas and Parquet preparation, leakage-safe classification, evaluation for an imbalanced target and 16 unit tests.
 
-The case study also discusses the wider firewall, NAT, VPN, IDS/IPS, usability and performance areas documented in the project report while clearly identifying the limits of the surviving evidence.
+[Open the live dashboard](https://abrahamkaunda-predictive-maintenance.streamlit.app/) · [View source](https://github.com/abrahamkaunda-create/predictive-maintenance-analytics)
 
-## Technologies
+### IT Operations Toolkit
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Git and GitHub
-- GitHub Actions
-- GitHub Pages
+A multipage Python and Streamlit application containing an IPv4 subnet calculator, deterministic log analyser and transparent support-ticket prioritiser. Reusable logic is separated from the interface and covered by 30 unit tests.
 
-The website uses no frontend framework, package manager, database or server-side dependency.
+[Open the live toolkit](https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/) · [View source](https://github.com/abrahamkaunda-create/it-operations-toolkit)
 
-## Project structure
+### Windows Active Directory Lab
 
-```text
-.
-├── .github/workflows/deploy-pages.yml  # GitHub Pages deployment workflow
-├── assets/
-│   ├── favicon.svg                     # Website icon
-│   ├── pfsense-dhcp.png                # Retained DHCP configuration screenshot
-│   └── pfsense-topology.png            # Submitted network topology diagram
-├── .nojekyll                           # Disables Jekyll processing
-├── index.html                          # Main portfolio page
-├── pfsense-project.html                # pfSense project case study
-├── script.js                           # Dark-mode preference and controls
-├── styles.css                          # Design and responsive layout
-└── README.md                           # Repository documentation
-```
+An isolated VMware lab using Windows Server 2025 and Windows 11. I configured Active Directory, DNS, Group Policy, role-based file access and a small PowerShell provisioning workflow, then documented the results and troubleshooting process.
 
-## Run locally
+[Read the case study](https://abrahamkaunda-create.github.io/windows-ad-lab.html) · [View source](https://github.com/abrahamkaunda-create/windows-ad-lab)
 
-No installation is required. From the repository directory, run:
+### pfSense Network Security Lab
 
-```bash
-python -m http.server 8000
-```
+An evidence-based case study of my final-year virtualised network laboratory. It covers DHCP, DNS, firewall policy, NAT and multi-WAN configuration, while clearly separating retained evidence from conclusions that were not fully verified.
 
-Then open `http://localhost:8000` in a browser.
+[Read the case study](https://abrahamkaunda-create.github.io/pfsense-project.html)
 
-## Deployment
+### Personal Portfolio Website
 
-Changes pushed to the `main` branch are published to GitHub Pages through the included GitHub Actions workflow.
+A responsive static website built with HTML, CSS and JavaScript. It includes accessible navigation, a persistent dark-mode preference, reduced-motion support and GitHub Pages deployment from the `main` branch.
+
+[View the website](https://abrahamkaunda-create.github.io/) · [View source](https://github.com/abrahamkaunda-create/abrahamkaunda-create.github.io)
+
+## Technical areas
+
+- **Data and development:** Python, pandas, NumPy, SQL, DuckDB, scikit-learn, HTML, CSS and JavaScript
+- **Systems:** Windows Server, Active Directory, Group Policy, PowerShell, RDP and troubleshooting
+- **Networking and security:** TCP/IP, DNS, DHCP, NAT, network segmentation, pfSense and firewall fundamentals
+- **Platforms and tools:** Git, GitHub, Streamlit, VMware and VirtualBox
+- **Working practice:** Data validation, unit testing, technical documentation and methodical troubleshooting
+
+## What I'm doing now
+
+I'm continuing to build projects that are real, tested and worth explaining. Each repository is intended to show both the finished result and the reasoning, validation and learning behind it.
 
 ## Contact
 
-**Abraham Kaunda**  
-London, United Kingdom  
-[abrahamkaunda@gmail.com](mailto:abrahamkaunda@gmail.com)
+- Portfolio: [abrahamkaunda-create.github.io](https://abrahamkaunda-create.github.io/)
+- Email: [abrahamkaunda@gmail.com](mailto:abrahamkaunda@gmail.com)
+- Location: London, United Kingdom

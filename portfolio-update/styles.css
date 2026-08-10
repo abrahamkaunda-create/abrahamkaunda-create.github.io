@@ -379,7 +379,7 @@ nav a:hover { opacity: .55; }
 .diagnostic-card > span { color: var(--muted); font: 400 11px/1 monospace; }
 .diagnostic-card h3 { margin: 58px 0 16px; font-size: 22px; }
 .diagnostic-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
-.case-document-link { margin-top: 24px; border-color: var(--line); color: #4d7c0f; }
+.case-document-link { margin-top: 24px; border-color: var(--line); color: #3f6b0b; }
 .case-document-link:hover { color: var(--ink); }
 .diagnostic-plan { margin-top: 54px; }
 .diagnostic-plan h3 { margin: 0; font-size: 28px; }
@@ -455,6 +455,8 @@ footer h2 { max-width: 750px; margin: 0; font-size: clamp(42px, 5vw, 74px); line
 :root[data-theme="dark"] .evidence-note p { color: #b1bdc7; }
 :root[data-theme="dark"] .evidence-table thead th { background: #e8ece9; color: #101c2b; }
 :root[data-theme="dark"] .case-figure figcaption strong { color: #101c2b; }
+:root[data-theme="dark"] .case-document-link { color: var(--acid); }
+:root[data-theme="dark"] .case-document-link:hover { color: var(--ink); }
 :root[data-theme="dark"] .button-primary,
 :root[data-theme="dark"] .skip-link { color: #101c2b; }
 :root[data-theme="dark"] .footer-email:hover { color: #101c2b; }

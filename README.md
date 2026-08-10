@@ -6,6 +6,12 @@ A responsive static portfolio presenting practical software, networking, securit
 
 ## Selected projects
 
+### Predictive Maintenance Analytics
+
+A recruiter-facing graduate data science project using the synthetic UCI AI4I 2020 dataset. It demonstrates validated pandas and Parquet preparation, DuckDB SQL analysis, leakage-safe scikit-learn pipelines, evaluation for an imbalanced target, Streamlit and unit testing without claiming production readiness.
+
+[Open the live dashboard](https://abrahamkaunda-predictive-maintenance.streamlit.app/) · [View source](https://github.com/abrahamkaunda-create/predictive-maintenance-analytics)
+
 ### IT Operations Toolkit
 
 A live multipage Python and Streamlit application containing an IPv4 subnet calculator, deterministic text-log analyser and transparent support-ticket prioritiser. Reusable logic is separated from the interface and covered by 30 unit tests.

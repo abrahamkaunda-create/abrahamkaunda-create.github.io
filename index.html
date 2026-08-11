@@ -35,6 +35,7 @@
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#approach">Approach</a>
+          <a href="#atlas">Explore</a>
           <a href="#projects">Projects</a>
           <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
             <span class="theme-icon" aria-hidden="true">☾</span>
@@ -145,9 +146,71 @@
         </div>
       </section>
 
+      <section class="atlas-section section" id="atlas" aria-labelledby="atlas-title" data-project-atlas>
+        <div class="atlas-heading">
+          <div class="section-label"><span>03</span> Explore</div>
+          <h2 id="atlas-title">See how my projects connect.</h2>
+          <p>Choose an area to see the projects and evidence behind it.</p>
+        </div>
+
+        <div class="atlas-shell">
+          <div class="atlas-map">
+            <div class="atlas-map-top">
+              <span>Capability map</span>
+              <span class="atlas-map-status"><i></i><span data-atlas-status>Data selected</span></span>
+            </div>
+            <div class="atlas-network" role="group" aria-label="Choose a capability area">
+              <span class="atlas-core" aria-hidden="true"><b>AK</b><small>Evidence</small></span>
+              <span class="atlas-connector atlas-connector-data is-active" data-atlas-connector="data"></span>
+              <span class="atlas-connector atlas-connector-software" data-atlas-connector="software"></span>
+              <span class="atlas-connector atlas-connector-systems" data-atlas-connector="systems"></span>
+              <span class="atlas-connector atlas-connector-networking" data-atlas-connector="networking"></span>
+              <button class="atlas-node atlas-node-data is-active" type="button" data-atlas-node="data" aria-pressed="true">
+                <span>01</span><strong>Data</strong><small>Analyse</small>
+              </button>
+              <button class="atlas-node atlas-node-software" type="button" data-atlas-node="software" aria-pressed="false">
+                <span>02</span><strong>Software</strong><small>Build</small>
+              </button>
+              <button class="atlas-node atlas-node-systems" type="button" data-atlas-node="systems" aria-pressed="false">
+                <span>03</span><strong>Systems</strong><small>Configure</small>
+              </button>
+              <button class="atlas-node atlas-node-networking" type="button" data-atlas-node="networking" aria-pressed="false">
+                <span>04</span><strong>Networking</strong><small>Connect</small>
+              </button>
+            </div>
+            <p class="atlas-map-hint">Choose an area. Arrow keys also work.</p>
+          </div>
+
+          <article class="atlas-detail" aria-live="polite" aria-atomic="true">
+            <header class="atlas-detail-header">
+              <div>
+                <p class="atlas-domain" data-atlas-domain>01 / Data</p>
+                <h3 data-atlas-title>Data that can be questioned, not just displayed.</h3>
+              </div>
+            </header>
+            <p class="atlas-description" data-atlas-description>Validated preparation and honest evaluation make the model&rsquo;s trade-offs visible.</p>
+            <div class="atlas-skills" data-atlas-skills aria-label="Data tools">
+              <span>Python</span><span>pandas</span><span>DuckDB SQL</span><span>scikit-learn</span><span>Streamlit</span>
+            </div>
+            <div class="atlas-evidence" data-atlas-projects>
+              <article>
+                <p>01 / Documented project</p>
+                <h4>Predictive Maintenance Analytics</h4>
+                <span>Synthetic AI4I 2020 data · validated pipeline · imbalanced classification</span>
+                <div class="atlas-links">
+                  <a href="https://abrahamkaunda-predictive-maintenance.streamlit.app/" target="_blank" rel="noopener noreferrer">Open dashboard <span aria-hidden="true">↗</span></a>
+                  <a href="https://github.com/abrahamkaunda-create/predictive-maintenance-analytics" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+            </div>
+            <a class="atlas-all-projects" href="#projects">View all projects <span aria-hidden="true">&darr;</span></a>
+          </article>
+        </div>
+      </section>
+
       <section class="projects-section section" id="projects">
         <div class="projects-heading">
-          <div class="section-label"><span>03</span> Selected projects</div>
+          <div class="section-label"><span>04</span> Selected projects</div>
           <h2>Things I&apos;ve built and explored.</h2>
           <p>Each project represents a real problem, a set of choices and something useful learned along the way.</p>
         </div>

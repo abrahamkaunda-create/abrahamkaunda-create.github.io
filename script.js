@@ -39,6 +39,8 @@ const revealTargets = document.querySelectorAll([
   ".system-card",
   ".about-content",
   ".strengths-content",
+  ".atlas-heading",
+  ".atlas-shell",
   ".projects-heading",
   ".project-tile",
   ".project-note",
@@ -212,3 +214,208 @@ function initialiseImageLightbox() {
 }
 
 initialiseImageLightbox();
+
+const projectAtlas = document.querySelector("[data-project-atlas]");
+
+function initialiseProjectAtlas() {
+  if (!projectAtlas) {
+    return;
+  }
+
+  const atlasAreas = {
+    data: {
+      index: "01",
+      label: "Data",
+      title: "Data that can be questioned, not just displayed.",
+      description: "Validated preparation and honest evaluation make the model’s trade-offs visible.",
+      skills: ["Python", "pandas", "DuckDB SQL", "scikit-learn", "Streamlit"],
+      projects: [
+        {
+          type: "Documented project",
+          title: "Predictive Maintenance Analytics",
+          summary: "Synthetic AI4I 2020 data · validated pipeline · imbalanced classification",
+          links: [
+            ["Open dashboard", "https://abrahamkaunda-predictive-maintenance.streamlit.app/"],
+            ["View source", "https://github.com/abrahamkaunda-create/predictive-maintenance-analytics"]
+          ]
+        }
+      ]
+    },
+    software: {
+      index: "02",
+      label: "Software",
+      title: "Small tools built around clear, testable logic.",
+      description: "Reusable logic, validation and testing keep each interface understandable.",
+      skills: ["Python", "JavaScript", "HTML/CSS", "Streamlit", "Unit testing"],
+      projects: [
+        {
+          type: "Live application",
+          title: "IT Operations Toolkit",
+          summary: "IPv4 calculator · log analyser · transparent P1–P4 prioritiser · 30 unit tests",
+          links: [
+            ["Open toolkit", "https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/"],
+            ["View source", "https://github.com/abrahamkaunda-create/it-operations-toolkit"]
+          ]
+        },
+        {
+          type: "Web project",
+          title: "Personal Portfolio Website",
+          summary: "Semantic HTML · responsive CSS · vanilla JavaScript · GitHub Pages",
+          links: [
+            ["View source", "https://github.com/abrahamkaunda-create/abrahamkaunda-create.github.io"]
+          ]
+        }
+      ]
+    },
+    systems: {
+      index: "03",
+      label: "Systems",
+      title: "Infrastructure understood through configuration and evidence.",
+      description: "Documented labs connect identity, policy and access with practical support work.",
+      skills: ["Windows Server", "Active Directory", "Group Policy", "PowerShell", "SMB/NTFS"],
+      projects: [
+        {
+          type: "Evidence-led case study",
+          title: "Windows Active Directory Lab",
+          summary: "AD DS · DNS · Group Policy · role-based file access · PowerShell provisioning",
+          links: [
+            ["Review evidence", "windows-ad-lab.html"],
+            ["View source", "https://github.com/abrahamkaunda-create/windows-ad-lab"]
+          ]
+        },
+        {
+          type: "Support application",
+          title: "IT Operations Toolkit",
+          summary: "Reusable support utilities · input validation · deterministic outputs · unit testing",
+          links: [
+            ["Open toolkit", "https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/"]
+          ]
+        }
+      ]
+    },
+    networking: {
+      index: "04",
+      label: "Networking",
+      title: "Network behaviour traced from addressing to policy.",
+      description: "Addressing, services and access controls are connected through practical tests.",
+      skills: ["TCP/IP", "DNS/DHCP", "NAT", "pfSense", "Firewall policy"],
+      projects: [
+        {
+          type: "Evidence-led case study",
+          title: "pfSense Network Security Lab",
+          summary: "DHCP · DNS · NAT · firewall policy · multi-WAN · WireGuard retrospective",
+          links: [
+            ["Review evidence", "pfsense-project.html"]
+          ]
+        },
+        {
+          type: "Networking utility",
+          title: "IPv4 Subnet Calculator",
+          summary: "CIDR validation · network and broadcast addresses · usable host ranges · edge cases",
+          links: [
+            ["Open toolkit", "https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/"],
+            ["View source", "https://github.com/abrahamkaunda-create/it-operations-toolkit"]
+          ]
+        }
+      ]
+    }
+  };
+
+  const nodes = [...projectAtlas.querySelectorAll("[data-atlas-node]")];
+  const connectors = [...projectAtlas.querySelectorAll("[data-atlas-connector]")];
+  const detail = projectAtlas.querySelector(".atlas-detail");
+  const status = projectAtlas.querySelector("[data-atlas-status]");
+  const domain = projectAtlas.querySelector("[data-atlas-domain]");
+  const title = projectAtlas.querySelector("[data-atlas-title]");
+  const description = projectAtlas.querySelector("[data-atlas-description]");
+  const skills = projectAtlas.querySelector("[data-atlas-skills]");
+  const projects = projectAtlas.querySelector("[data-atlas-projects]");
+
+  function createAtlasLink(label, href) {
+    const link = document.createElement("a");
+    const arrow = document.createElement("span");
+
+    link.href = href;
+    link.append(document.createTextNode(`${label} `));
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    link.appendChild(arrow);
+
+    if (/^https?:/i.test(href)) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
+
+    return link;
+  }
+
+  function renderAtlasArea(areaName) {
+    const area = atlasAreas[areaName];
+
+    nodes.forEach(node => {
+      const isActive = node.dataset.atlasNode === areaName;
+      node.classList.toggle("is-active", isActive);
+      node.setAttribute("aria-pressed", String(isActive));
+    });
+
+    connectors.forEach(connector => {
+      connector.classList.toggle("is-active", connector.dataset.atlasConnector === areaName);
+    });
+
+    status.textContent = `${area.label} selected`;
+    domain.textContent = `${area.index} / ${area.label}`;
+    title.textContent = area.title;
+    description.textContent = area.description;
+
+    skills.replaceChildren(...area.skills.map(skill => {
+      const item = document.createElement("span");
+      item.textContent = skill;
+      return item;
+    }));
+
+    projects.replaceChildren(...area.projects.map((project, index) => {
+      const article = document.createElement("article");
+      const projectType = document.createElement("p");
+      const projectTitle = document.createElement("h4");
+      const projectSummary = document.createElement("span");
+      const projectLinks = document.createElement("div");
+
+      projectType.textContent = `${String(index + 1).padStart(2, "0")} / ${project.type}`;
+      projectTitle.textContent = project.title;
+      projectSummary.textContent = project.summary;
+      projectLinks.className = "atlas-links";
+      projectLinks.replaceChildren(...project.links.map(link => createAtlasLink(link[0], link[1])));
+      article.append(projectType, projectTitle, projectSummary, projectLinks);
+      return article;
+    }));
+
+    if (!motionPreference.matches) {
+      detail.classList.remove("is-switching");
+      void detail.offsetWidth;
+      detail.classList.add("is-switching");
+    }
+  }
+
+  nodes.forEach((node, index) => {
+    node.addEventListener("click", () => renderAtlasArea(node.dataset.atlasNode));
+    node.addEventListener("keydown", event => {
+      const direction = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 :
+        ["ArrowLeft", "ArrowUp"].includes(event.key) ? -1 : 0;
+
+      if (!direction && !["Home", "End"].includes(event.key)) {
+        return;
+      }
+
+      event.preventDefault();
+      const targetIndex = event.key === "Home" ? 0 :
+        event.key === "End" ? nodes.length - 1 :
+          (index + direction + nodes.length) % nodes.length;
+      nodes[targetIndex].focus();
+      nodes[targetIndex].click();
+    });
+  });
+
+  detail.addEventListener("animationend", () => detail.classList.remove("is-switching"));
+}
+
+initialiseProjectAtlas();

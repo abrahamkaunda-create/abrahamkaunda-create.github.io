@@ -249,6 +249,16 @@ function initialiseProjectAtlas() {
       skills: ["Python", "JavaScript", "HTML/CSS", "Streamlit", "Unit testing"],
       projects: [
         {
+          type: "Interactive application",
+          title: "Incident Replay Lab",
+          summary: "React and TypeScript · deterministic detection rules · replay controls · 27 tests",
+          links: [
+            ["Read case study", "incident-replay-lab.html"],
+            ["Open live lab", "https://abrahamkaunda-create.github.io/incident-replay-lab/"],
+            ["View source", "https://github.com/abrahamkaunda-create/incident-replay-lab"]
+          ]
+        },
+        {
           type: "Live application",
           title: "IT Operations Toolkit",
           summary: "IPv4 calculator · log analyser · transparent P1–P4 prioritiser · 30 unit tests",
@@ -275,6 +285,16 @@ function initialiseProjectAtlas() {
       skills: ["Windows Server", "Active Directory", "Group Policy", "PowerShell", "SMB/NTFS"],
       projects: [
         {
+          type: "Event analysis lab",
+          title: "Incident Replay Lab",
+          summary: "Synthetic Windows events · authentication detections · incident workflow · audit history",
+          links: [
+            ["Read case study", "incident-replay-lab.html"],
+            ["Open live lab", "https://abrahamkaunda-create.github.io/incident-replay-lab/"],
+            ["View source", "https://github.com/abrahamkaunda-create/incident-replay-lab"]
+          ]
+        },
+        {
           type: "Evidence-led case study",
           title: "Windows Active Directory Lab",
           summary: "AD DS · DNS · Group Policy · role-based file access · PowerShell provisioning",
@@ -300,6 +320,16 @@ function initialiseProjectAtlas() {
       description: "Addressing, services and access controls are connected through practical tests.",
       skills: ["TCP/IP", "DNS/DHCP", "NAT", "pfSense", "Firewall policy"],
       projects: [
+        {
+          type: "Security simulation",
+          title: "Incident Replay Lab",
+          summary: "Synthetic pfSense events · scan detection · firewall anomaly · explainable severity",
+          links: [
+            ["Read case study", "incident-replay-lab.html"],
+            ["Open live lab", "https://abrahamkaunda-create.github.io/incident-replay-lab/"],
+            ["View source", "https://github.com/abrahamkaunda-create/incident-replay-lab"]
+          ]
+        },
         {
           type: "Evidence-led case study",
           title: "pfSense Network Security Lab",

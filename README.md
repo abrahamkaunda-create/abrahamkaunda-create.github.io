@@ -6,6 +6,12 @@ A responsive static portfolio presenting practical software, networking, securit
 
 ## Selected projects
 
+### Incident Replay Lab
+
+A browser-based learning simulation that replays synthetic Windows Security and pfSense firewall events, applies four transparent detection rules and groups supporting activity into incidents. The React and TypeScript interface includes replay controls, explainable severity scoring, a device-local investigation workflow and 27 unit tests without presenting the project as a live or production security platform.
+
+[Read the case study](https://abrahamkaunda-create.github.io/incident-replay-lab.html) · [Open the interactive lab](https://abrahamkaunda-create.github.io/incident-replay-lab/) · [View source](https://github.com/abrahamkaunda-create/incident-replay-lab)
+
 ### Predictive Maintenance Analytics
 
 Predictive maintenance analytics dashboard built with Python, DuckDB, scikit-learn and Streamlit using the synthetic UCI AI4I 2020 dataset. It also demonstrates validated pandas and Parquet preparation, leakage-safe modelling, evaluation for an imbalanced target and unit testing without claiming production readiness.
@@ -60,6 +66,7 @@ The portfolio has no frontend framework, package manager, database or server-sid
 ├── 404.html                             # Branded page-not-found response
 ├── windows-ad-lab.html                  # Windows lab case study
 ├── pfsense-project.html                 # pfSense lab case study
+├── incident-replay-lab.html             # Incident Replay Lab case study
 ├── script.js                            # Theme, scroll reveal and image lightbox
 ├── styles.css                           # Design, animation and responsive layout
 └── README.md                            # Repository documentation

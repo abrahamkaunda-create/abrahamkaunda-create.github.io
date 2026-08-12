@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Abraham Kaunda's browser-based incident replay lab using synthetic Windows Security and pfSense events, explainable detection rules, React and TypeScript.">
+    <meta name="theme-color" content="#101c2b">
+    <meta property="og:title" content="Incident Replay Lab | Abraham Kaunda">
+    <meta property="og:description" content="An interactive lab for replaying synthetic technical events and examining transparent incident-detection logic.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Abraham Kaunda Portfolio">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://abrahamkaunda-create.github.io/incident-replay-lab.html">
+    <meta property="og:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Incident Replay Lab | Abraham Kaunda">
+    <meta name="twitter:description" content="An interactive lab for replaying synthetic technical events and examining transparent incident-detection logic.">
+    <meta name="twitter:image" content="https://abrahamkaunda-create.github.io/assets/portfolio-social-preview.png">
+    <meta name="twitter:image:alt" content="Abraham Kaunda, Computer Science graduate — data, software, systems and networking">
+    <title>Incident Replay Lab | Abraham Kaunda</title>
+    <link rel="canonical" href="https://abrahamkaunda-create.github.io/incident-replay-lab.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Return to Abraham Kaunda's portfolio">
+        <span class="brand-mark">AK</span>
+        <span>Abraham Kaunda</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#approach">Approach</a>
+        <a href="#scenarios">Scenarios</a>
+        <a href="#testing">Testing</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="nav-cta" href="mailto:abrahamkaunda@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="case-hero">
+        <p class="eyebrow">Interactive cybersecurity project · Event analysis</p>
+        <h1>Incident Replay Lab</h1>
+        <p class="case-lead">
+          A browser-based learning project that replays synthetic Windows Security
+          and pfSense firewall events, applies clear detection rules and turns
+          related activity into incidents that can be reviewed step by step.
+          It is a simulation for explaining event analysis—not a live monitoring
+          service or production security platform.
+        </p>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://abrahamkaunda-create.github.io/incident-replay-lab/" target="_blank" rel="noopener noreferrer">Open the live lab <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/abrahamkaunda-create/incident-replay-lab" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#scenarios">Review the scenarios <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="index.html#projects">Back to projects</a>
+        </div>
+        <div class="case-meta" aria-label="Project summary">
+          <div><span>Project type</span><strong>Browser-based learning simulation</strong></div>
+          <div><span>Event sources</span><strong>Synthetic Windows and pfSense logs</strong></div>
+          <div><span>Detection</span><strong>Four deterministic rules</strong></div>
+          <div><span>Technology</span><strong>React, TypeScript and Vite</strong></div>
+        </div>
+      </section>
+
+      <section class="case-section" id="approach">
+        <div class="case-section-heading">
+          <div class="section-label"><span>01</span> Approach</div>
+          <h2>Make every detection understandable from event to incident.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            I wanted to explore how technical events become actionable security
+            information without hiding the reasoning behind a complex model. Each
+            scenario has a known sequence, an explicit threshold and a visible
+            score breakdown, so a visitor can inspect why an incident appeared.
+          </p>
+          <div class="scope-grid scope-grid-three">
+            <article class="scope-card">
+              <span class="card-kicker">01 / NORMALISE</span>
+              <h3>One event structure</h3>
+              <p>Windows and firewall fixtures are validated and converted into a consistent event shape before analysis.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">02 / DETECT</span>
+              <h3>Transparent rules</h3>
+              <p>Deterministic rules count related events, check the documented threshold and return an explainable match.</p>
+            </article>
+            <article class="scope-card">
+              <span class="card-kicker">03 / INVESTIGATE</span>
+              <h3>Connected evidence</h3>
+              <p>The incident view keeps the severity, matched rule, supporting events, notes, status and audit history together.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="scenarios">
+        <div class="case-section-heading">
+          <div class="section-label"><span>02</span> Scenarios</div>
+          <h2>Four small simulations cover authentication and firewall activity.</h2>
+        </div>
+        <div class="case-body">
+          <div class="evidence-table-wrap" tabindex="0" aria-label="Scrollable detection-scenario table">
+            <table class="evidence-table">
+              <thead>
+                <tr><th scope="col">Scenario</th><th scope="col">Rule and threshold</th><th scope="col">Result</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Password guessing</th><td><code>AUTH-001</code> matches five failed sign-ins for the same account and source.</td><td>Medium severity · score 45</td></tr>
+                <tr><th scope="row">Account lockout</th><td><code>AUTH-002</code> combines four failed sign-ins with a Windows 4740 lockout event.</td><td>High severity · score 75</td></tr>
+                <tr><th scope="row">Network scan</th><td><code>NET-001</code> matches one source blocked across eight distinct TCP ports.</td><td>High severity · score 65</td></tr>
+                <tr><th scope="row">Firewall anomaly</th><td><code>FW-001</code> matches ten internal-source blocks involving at least three destinations.</td><td>Medium severity · score 50</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class="evidence-note">
+            <h3>Why deterministic rules?</h3>
+            <p>
+              They suit the scale and purpose of this project: the visitor can
+              trace the input, threshold and outcome directly. The project does
+              not use AI, claim predictive ability or imply that four rules are
+              sufficient for a real organisation.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="case-section" id="experience">
+        <div class="case-section-heading">
+          <div class="section-label"><span>03</span> Experience</div>
+          <h2>The interface turns the logic into something visitors can explore.</h2>
+        </div>
+        <div class="case-body">
+          <div class="diagnostic-grid">
+            <article class="diagnostic-card">
+              <span>01 / REPLAY</span>
+              <h3>Control the timeline</h3>
+              <p>Start, pause, resume, restart, change playback speed or skip to the result while events arrive in order.</p>
+            </article>
+            <article class="diagnostic-card">
+              <span>02 / EXPLAIN</span>
+              <h3>Inspect the match</h3>
+              <p>See when the threshold is reached, which rule matched and how the visible severity score was calculated.</p>
+            </article>
+            <article class="diagnostic-card">
+              <span>03 / RECORD</span>
+              <h3>Work the incident</h3>
+              <p>Add an investigation note, update the incident status and review a device-local audit trail of those actions.</p>
+            </article>
+          </div>
+          <div class="case-actions">
+            <a class="button button-primary" href="https://abrahamkaunda-create.github.io/incident-replay-lab/" target="_blank" rel="noopener noreferrer">Try the live replay <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/abrahamkaunda-create/incident-replay-lab" target="_blank" rel="noopener noreferrer">Review the source <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="testing">
+        <div class="case-section-heading">
+          <div class="section-label"><span>04</span> Testing</div>
+          <h2>The same inputs produce the same explainable outcomes.</h2>
+        </div>
+        <div class="case-body">
+          <p>
+            The project includes 27 automated tests covering fixture validation,
+            event normalisation, detection thresholds, correlation and supporting
+            utility behaviour. The final interface was also checked on desktop,
+            tablet and mobile widths, including keyboard operation, replay controls
+            and the complete incident workflow.
+          </p>
+          <div class="case-facts">
+            <article class="case-fact"><span>01 / AUTOMATED</span><strong>27 passing unit tests</strong></article>
+            <article class="case-fact"><span>02 / BUILD</span><strong>Successful TypeScript production build</strong></article>
+            <article class="case-fact"><span>03 / RESPONSIVE</span><strong>Desktop, tablet and mobile review</strong></article>
+            <article class="case-fact"><span>04 / ACCESS</span><strong>Keyboard and reduced-motion support</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="limitations">
+        <div class="case-section-heading">
+          <div class="section-label"><span>05</span> Limitations</div>
+          <h2>A focused technical demonstration with deliberately clear boundaries.</h2>
+        </div>
+        <div class="case-body">
+          <ul class="limitations-list">
+            <li><span>01</span><div>Every event and identity is fictional and intentionally created for the four documented scenarios.</div></li>
+            <li><span>02</span><div>The application does not connect to live Windows hosts, firewalls, accounts or organisational data.</div></li>
+            <li><span>03</span><div>Incident changes are stored only in the visitor's browser; there is no backend, shared database or user authentication.</div></li>
+            <li><span>04</span><div>The rules demonstrate detection concepts but have not been tuned or validated for real operational environments.</div></li>
+            <li><span>05</span><div>The project is a learning simulation, not a SOC product, managed security service or production-ready platform.</div></li>
+          </ul>
+          <div class="skills-demonstrated" aria-label="Skills demonstrated by the project">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Vite</span>
+            <span>Event validation</span>
+            <span>Detection logic</span>
+            <span>Incident correlation</span>
+            <span>Responsive design</span>
+            <span>Accessibility</span>
+            <span>Unit testing</span>
+            <span>Technical documentation</span>
+          </div>
+          <p class="case-closing">
+            The project demonstrates how I approach an unfamiliar technical
+            problem: define a credible scope, research the event types, make the
+            logic inspectable, test the important behaviour and state clearly
+            what the finished result can and cannot do.
+          </p>
+          <a class="case-return" href="index.html#projects"><span aria-hidden="true">←</span> Return to all projects</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p class="eyebrow">Open to opportunities</p>
+        <h2>Interested in discussing this project or a junior technical opportunity?</h2>
+      </div>
+      <a class="footer-email" href="mailto:abrahamkaunda@gmail.com">abrahamkaunda@gmail.com <span aria-hidden="true">↗</span></a>
+      <p class="footer-bottom">© 2026 Abraham Kaunda <a href="https://github.com/abrahamkaunda-create" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span>London, United Kingdom</span></p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -67,6 +67,17 @@
   box-shadow: 0 50px 100px rgba(15, 30, 48, .18);
 }
 
+@media (min-width: 701px) {
+  .studio-hero {
+    padding-top: clamp(59px, 6.75vw, 104px);
+    padding-bottom: clamp(66px, 7.5vw, 113px);
+  }
+
+  .studio-hero-stage {
+    margin-top: clamp(48px, 6vw, 87px);
+  }
+}
+
 .studio-stage-top {
   position: relative;
   z-index: 3;

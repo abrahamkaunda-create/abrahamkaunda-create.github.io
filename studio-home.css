@@ -395,6 +395,12 @@
   color: #101c2b;
 }
 
+.streamlit-wake-note {
+  margin: 12px 0 0;
+  color: #8493a0;
+  font: 400 10px/1.55 monospace;
+}
+
 .studio-more {
   max-width: none;
   padding-right: max(5vw, calc((100vw - 1440px)/2 + 5vw));
@@ -476,6 +482,13 @@
   border-top: 1px solid var(--ink);
   font-size: 11px;
   font-weight: 700;
+}
+
+.studio-more-grid .streamlit-wake-note {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
 }
 
 .studio-capabilities {

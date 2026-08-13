@@ -198,4 +198,9 @@
   .studio-case-page .finding-grid {
     gap: 10px;
   }
+
+  .studio-case-page .evidence-table-wrap {
+    border-radius: 0;
+    overflow: visible;
+  }
 }

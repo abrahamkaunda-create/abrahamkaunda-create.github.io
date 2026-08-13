@@ -86,6 +86,8 @@ Then open `http://localhost:8000`.
 
 GitHub Pages publishes the website from the `main` branch. No custom GitHub Actions workflow is required.
 
+Shared CSS and JavaScript references use a small version query when their contents change. This gives browsers a new asset URL after a deployment while keeping the site fully static; GitHub Pages controls the remaining short-lived HTML cache.
+
 ## Contact
 
 **Abraham Kaunda**  

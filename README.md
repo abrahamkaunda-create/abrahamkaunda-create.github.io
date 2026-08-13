@@ -1,6 +1,6 @@
 # Abraham Kaunda — Computer Science Portfolio
 
-A responsive static portfolio presenting practical software, networking, security and Windows infrastructure projects.
+A responsive static portfolio presenting practical projects across systems, security and data.
 
 **Live website:** [abrahamkaunda-create.github.io](https://abrahamkaunda-create.github.io/)
 
@@ -8,7 +8,7 @@ A responsive static portfolio presenting practical software, networking, securit
 
 ### Incident Replay Lab
 
-A browser-based learning simulation that replays synthetic Windows Security and pfSense firewall events, applies four transparent detection rules and groups supporting activity into incidents. The React and TypeScript interface includes replay controls, explainable severity scoring, a device-local investigation workflow and 27 unit tests without presenting the project as a live or production security platform.
+A browser-based learning simulation that replays synthetic Windows Security and pfSense firewall events, applies four transparent detection rules and groups supporting activity into incidents. The React and TypeScript interface includes replay controls, explainable severity scoring, a device-local investigation workflow and 27 automated tests without presenting the project as a live or production security platform.
 
 [Read the case study](https://abrahamkaunda-create.github.io/incident-replay-lab.html) · [Open the interactive lab](https://abrahamkaunda-create.github.io/incident-replay-lab/) · [View source](https://github.com/abrahamkaunda-create/incident-replay-lab)
 

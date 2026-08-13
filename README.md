@@ -69,6 +69,10 @@ The portfolio has no frontend framework, package manager, database or server-sid
 ├── incident-replay-lab.html             # Incident Replay Lab case study
 ├── script.js                            # Theme, scroll reveal and image lightbox
 ├── styles.css                           # Design, animation and responsive layout
+├── studio-home.css                      # Homepage-specific layout and presentation
+├── studio-system.css                    # Shared design system, themes and responsive foundations
+├── studio-case.css                      # Case-study layouts and responsive tables
+├── studio-home.js                       # Homepage reveals with reduced-motion support
 └── README.md                            # Repository documentation
 ```
 

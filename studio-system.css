@@ -1,0 +1,103 @@
+:is(.studio-home, .studio-case-page) {
+  --paper: #fff;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --blue: #0f3154;
+  --acid: #6eb4ff;
+  --studio-white: #fff;
+  --studio-black: #060a10;
+  --studio-blue: #0f3154;
+  --studio-panel: #f5f5f7;
+  --studio-action: #0066cc;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:is(.studio-home, .studio-case-page) a:focus-visible,
+:is(.studio-home, .studio-case-page) button:focus-visible {
+  outline-color: var(--studio-action);
+}
+
+:is(.studio-home, .studio-case-page) .site-header {
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+:is(.studio-home, .studio-case-page) .brand-mark {
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:is(.studio-home, .studio-case-page) .nav-cta,
+:is(.studio-home, .studio-case-page) .theme-toggle {
+  border-color: var(--line);
+  border-radius: 999px;
+}
+
+:is(.studio-home, .studio-case-page) .nav-cta:hover,
+:is(.studio-home, .studio-case-page) .theme-toggle:hover {
+  background: var(--studio-panel);
+  color: var(--ink);
+}
+
+:is(.studio-home, .studio-case-page) .button {
+  gap: 20px;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+:is(.studio-home, .studio-case-page) .button-primary {
+  background: var(--studio-action);
+  color: #fff;
+}
+
+:is(.studio-home, .studio-case-page) .button-primary:hover {
+  background: #0077ed;
+}
+
+:is(.studio-home, .studio-case-page) .button-secondary {
+  border-color: var(--line);
+}
+
+:is(.studio-home, .studio-case-page) .button-secondary:hover {
+  background: var(--studio-panel);
+}
+
+:is(.studio-home, .studio-case-page) footer h2 {
+  letter-spacing: -.045em;
+}
+
+:is(.studio-home, .studio-case-page) .footer-email:hover {
+  background: var(--studio-action);
+  color: #fff;
+}
+
+:root[data-theme="dark"] :is(.studio-home, .studio-case-page) {
+  --paper: #0b121c;
+  --ink: #f5f5f7;
+  --muted: #a1a1a6;
+  --line: #424245;
+  --blue: #153b61;
+  --acid: #6eb4ff;
+  --studio-white: #0b121c;
+  --studio-black: #04080d;
+  --studio-blue: #153b61;
+  --studio-panel: #151d28;
+  --studio-action: #2997ff;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] :is(.studio-home, .studio-case-page) .button-primary {
+  color: #0b121c;
+}
+
+:root[data-theme="dark"] :is(.studio-home, .studio-case-page) .button-primary:hover {
+  background: #40a0ff;
+}
+
+:root[data-theme="dark"] :is(.studio-home, .studio-case-page) .footer-email:hover {
+  color: #0b121c;
+}

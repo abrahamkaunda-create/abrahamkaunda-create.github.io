@@ -1,6 +1,10 @@
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
+const themeColor = document.querySelector('meta[name="theme-color"]');
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentYear = document.querySelector("[data-current-year]");
+
+if (currentYear) currentYear.textContent = new Date().getFullYear();
 
 const savedTheme = localStorage.getItem("portfolio-theme");
 const initialTheme = savedTheme || (systemTheme.matches ? "dark" : "light");
@@ -9,6 +13,7 @@ function applyTheme(theme) {
   const isDark = theme === "dark";
 
   document.documentElement.dataset.theme = theme;
+  themeColor?.setAttribute("content", isDark ? "#0b121c" : "#f5f5f7");
   themeToggle.setAttribute("aria-pressed", String(isDark));
   themeToggle.setAttribute(
     "aria-label",
@@ -203,6 +208,18 @@ function initialiseImageLightbox() {
     if (event.target === lightbox) {
       closeLightbox();
     }
+  });
+
+  lightbox.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeLightbox();
+    }
+  });
+
+  lightbox.addEventListener("cancel", event => {
+    event.preventDefault();
+    closeLightbox();
   });
 
   lightbox.addEventListener("close", () => {

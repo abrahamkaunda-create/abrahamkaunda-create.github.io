@@ -1,0 +1,201 @@
+.studio-case-page {
+  --paper: #fff;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --blue: #0f3154;
+  --acid: #0066cc;
+  --studio-panel: #f5f5f7;
+  --studio-action: #0066cc;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.studio-case-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.studio-case-page .brand-mark {
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.studio-case-page .nav-cta,
+.studio-case-page .theme-toggle {
+  border-color: var(--line);
+  border-radius: 999px;
+}
+
+.studio-case-page .nav-cta:hover,
+.studio-case-page .theme-toggle:hover {
+  background: var(--studio-panel);
+  color: var(--ink);
+}
+
+.studio-case-page .case-hero h1,
+.studio-case-page .case-section-heading h2,
+.studio-case-page footer h2 {
+  letter-spacing: -.045em;
+}
+
+.studio-case-page .error-panel {
+  overflow: hidden;
+  border-color: var(--line);
+  border-radius: 24px;
+}
+
+.studio-case-page .button {
+  gap: 20px;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.studio-case-page .button-primary {
+  background: var(--studio-action);
+  color: #fff;
+}
+
+.studio-case-page .button-primary:hover {
+  background: #0077ed;
+}
+
+.studio-case-page .button-secondary {
+  border-color: var(--line);
+}
+
+.studio-case-page .button-secondary:hover {
+  background: var(--studio-panel);
+}
+
+.studio-case-page .case-fact,
+.studio-case-page .scope-card,
+.studio-case-page .diagnostic-card,
+.studio-case-page .finding-card {
+  background: var(--studio-panel);
+}
+
+.studio-case-page .case-facts,
+.studio-case-page .scope-grid,
+.studio-case-page .diagnostic-grid,
+.studio-case-page .finding-grid {
+  gap: 14px;
+  border: 0;
+  background: transparent;
+}
+
+.studio-case-page .case-fact,
+.studio-case-page .scope-card,
+.studio-case-page .diagnostic-card,
+.studio-case-page .finding-card,
+.studio-case-page .case-figure,
+.studio-case-page .evidence-table-wrap {
+  border-color: var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.studio-case-page .evidence-note {
+  border-left-color: var(--studio-action);
+  border-radius: 0 18px 18px 0;
+  background: var(--studio-panel);
+}
+
+.studio-case-page .evidence-note p {
+  color: var(--muted);
+}
+
+.studio-case-page .evidence-note-warning {
+  border-left-color: #b56a00;
+}
+
+.studio-case-page .scope-card li::before,
+.studio-case-page .diagnostic-plan li > span,
+.studio-case-page .limitations-list span,
+.studio-case-page .case-document-link {
+  color: var(--studio-action);
+}
+
+.studio-case-page .case-closing {
+  border-left-color: var(--studio-action);
+}
+
+.studio-case-page .evidence-table thead th {
+  background: #0f3154;
+  color: #fff;
+}
+
+.studio-case-page .lightbox-trigger:focus-visible,
+.studio-case-page .evidence-table-wrap:focus-visible {
+  outline-color: var(--studio-action);
+}
+
+.studio-case-page .case-return {
+  color: var(--studio-action);
+}
+
+.studio-case-page .footer-email:hover {
+  background: var(--studio-action);
+  color: #fff;
+}
+
+:root[data-theme="dark"] .studio-case-page {
+  --paper: #0b121c;
+  --ink: #f5f5f7;
+  --muted: #a1a1a6;
+  --line: #424245;
+  --blue: #153b61;
+  --acid: #6eb4ff;
+  --studio-panel: #151d28;
+  --studio-action: #2997ff;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .studio-case-page .button-primary {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .studio-case-page .case-figure figcaption {
+  border-top-color: var(--line);
+  background: var(--studio-panel);
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .studio-case-page .case-figure figcaption strong {
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .studio-case-page .evidence-table thead th {
+  background: #153b61;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .studio-case-page .site-header {
+    position: relative;
+  }
+
+  .studio-case-page .case-hero {
+    padding-top: 64px;
+  }
+
+  .studio-case-page .case-hero h1 {
+    font-size: clamp(44px, 14vw, 68px);
+  }
+
+  .studio-case-page .case-actions .button {
+    width: 100%;
+  }
+
+  .studio-case-page .case-facts,
+  .studio-case-page .scope-grid,
+  .studio-case-page .diagnostic-grid,
+  .studio-case-page .finding-grid {
+    gap: 10px;
+  }
+}

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio of Abraham Kaunda, a London-based Computer Science graduate who enjoys building websites, exploring software and understanding the systems behind technology.">
-    <meta name="theme-color" content="#101c2b">
+    <meta name="description" content="Portfolio of Abraham Kaunda, a Computer Science graduate building practical projects across software, data, systems and networking.">
+    <meta name="theme-color" content="#f5f5f7">
     <meta property="og:title" content="Abraham Kaunda | Computer Science Graduate &amp; Builder">
     <meta property="og:description" content="Practical data, software, systems and networking projects by Abraham Kaunda, a London-based Computer Science graduate.">
     <meta property="og:type" content="website">
@@ -24,461 +24,280 @@
     <link rel="canonical" href="https://abrahamkaunda-create.github.io/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="studio-home.css?v=20260813b">
+    <link rel="stylesheet" href="studio-system.css?v=20260813b">
   </head>
-  <body>
+  <body class="studio-home">
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="Abraham Kaunda — home">
-          <span class="brand-mark">AK</span>
-          <span>Abraham Kaunda</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#approach">Approach</a>
-          <a href="#atlas">Explore</a>
-          <a href="#projects">Projects</a>
-          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-            <span class="theme-icon" aria-hidden="true">☾</span>
-          </button>
-          <a class="nav-cta" href="mailto:abrahamkaunda@gmail.com">Contact</a>
-        </nav>
+
+    <header class="site-header studio-header">
+      <a class="brand" href="#top" aria-label="Abraham Kaunda - home">
+        <span class="brand-mark">AK</span>
+        <span>Abraham Kaunda</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">&#9790;</span>
+        </button>
+        <a class="nav-cta" href="mailto:abrahamkaunda@gmail.com">Contact</a>
+      </nav>
     </header>
 
     <main id="main-content" tabindex="-1">
-      <section class="hero" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> London, UK · Computer Science graduate</p>
-          <h1>I enjoy turning ideas into things people can actually use.</h1>
-          <p class="hero-intro">
-            I build websites, explore software and enjoy understanding the
-            systems behind technology. This is where I share what I create,
-            what I&apos;m learning and the problems I&apos;ve worked through.
+      <section class="studio-hero" id="top">
+        <div class="studio-hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> London, UK &middot; Computer Science graduate</p>
+          <h1>I build practical technology.<span>And learn how it really works.</span></h1>
+          <p class="studio-hero-intro">
+            Websites, data tools and technical labs&mdash;built carefully, tested
+            honestly and documented so the thinking is easy to follow.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Explore what I&apos;ve built <span aria-hidden="true">↘</span></a>
+            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">&darr;</span></a>
             <a class="button button-secondary" href="mailto:abrahamkaunda@gmail.com">Start a conversation</a>
           </div>
         </div>
 
-        <div class="system-card">
-          <div class="system-card-top">
-            <span>Curiosity map</span>
-            <span class="live-label"><i></i> Always learning</span>
+        <div class="studio-hero-stage" aria-label="A visual overview of Abraham's project areas">
+          <div class="studio-stage-top">
+            <span>Current portfolio</span>
+            <span><i></i> Documented project work</span>
           </div>
-          <div class="network-map" aria-hidden="true">
-            <span class="node node-core">AK</span>
-            <span class="node node-one">WEB</span>
-            <span class="node node-two">CODE</span>
-            <span class="node node-three">SYS</span>
-            <span class="line line-one"></span>
-            <span class="line line-two"></span>
-            <span class="line line-three"></span>
+          <div class="studio-stage-display">
+            <div class="studio-stage-message">
+              <span>Curiosity &rarr; working projects</span>
+              <strong>Build.<br>Test.<br>Understand.</strong>
+            </div>
+            <div class="studio-curiosity" aria-hidden="true">
+              <span class="studio-curiosity-core">AK</span>
+              <span class="studio-curiosity-node studio-curiosity-data">DATA</span>
+              <span class="studio-curiosity-node studio-curiosity-code">CODE</span>
+              <span class="studio-curiosity-node studio-curiosity-systems">SYS</span>
+              <i class="studio-curiosity-line studio-curiosity-line-one"></i>
+              <i class="studio-curiosity-line studio-curiosity-line-two"></i>
+              <i class="studio-curiosity-line studio-curiosity-line-three"></i>
+            </div>
           </div>
-          <div class="system-stats">
-            <div><strong>01</strong><span>Web</span></div>
-            <div><strong>02</strong><span>Software</span></div>
-            <div><strong>03</strong><span>Systems</span></div>
+          <div class="studio-stage-index" aria-hidden="true">
+            <span><b>01</b> Data</span>
+            <span><b>02</b> Software</span>
+            <span><b>03</b> Systems</span>
+            <span><b>04</b> Networks</span>
           </div>
         </div>
       </section>
 
-      <section class="about section" id="about">
-        <div class="section-label"><span>01</span> About</div>
-        <div class="about-content">
-          <h2>Curious about how things work—and even more interested in building them.</h2>
-          <div class="about-grid">
-            <p>
-              I&apos;m a Computer Science graduate who enjoys the full process of
-              making something: starting with a rough idea, working through the
-              technical details and finishing with something functional that I
-              can share.
+      <section class="studio-introduction section" aria-labelledby="studio-introduction-title">
+        <p class="studio-section-number">01 / Selected work</p>
+        <div>
+          <h2 id="studio-introduction-title">Selected projects.<br>Different ways of thinking.</h2>
+          <p>
+            Start with the outcome. Open the evidence when you want the details.
+            Every claim below leads to a working project, documented case study or source repository.
+          </p>
+        </div>
+      </section>
+
+      <section class="studio-work" id="work" aria-label="Selected projects">
+        <article class="studio-project studio-project-incident" id="incident-project">
+          <div class="studio-project-visual project-visual incident-visual" aria-hidden="true">
+            <div class="incident-panel">
+              <div class="incident-panel-bar">
+                <span>Incident replay</span>
+                <em>synthetic events</em>
+              </div>
+              <div class="incident-timeline">
+                <span class="incident-event incident-event-one"><i>4625</i><b>Failed login</b></span>
+                <span class="incident-event incident-event-two"><i>4625</i><b>Threshold reached</b></span>
+                <span class="incident-event incident-event-three"><i>AUTH-001</i><b>Incident created</b></span>
+              </div>
+              <div class="incident-alert">
+                <span>MEDIUM</span>
+                <strong>Password guessing detected</strong>
+                <small>Score 45 &middot; 5 related events</small>
+              </div>
+            </div>
+            <div class="visual-caption incident-caption"><span>Replay</span><span>Detect</span><span>Investigate</span></div>
+          </div>
+          <div class="studio-project-copy">
+            <p class="studio-project-number">01 / Interactive cybersecurity project</p>
+            <p class="studio-project-name">Incident Replay Lab</p>
+            <h3>Understand an incident as it unfolds.</h3>
+            <p class="studio-project-summary">
+              A practice environment for reviewing suspicious login and firewall
+              activity. It replays synthetic events through four explainable detection scenarios.
             </p>
-            <p>
-              That curiosity moves across web development, software, networking
-              and systems. I learn best by building, testing and understanding
-              why something works—not by pretending to know everything already.
+            <dl class="studio-facts">
+              <div><dt>Scenarios</dt><dd>4 deterministic replays</dd></div>
+              <div><dt>Logic</dt><dd>Transparent rules and scoring</dd></div>
+              <div><dt>Testing</dt><dd>27 automated tests</dd></div>
+            </dl>
+            <p class="studio-honesty-note">Synthetic events only. Everything runs in the browser.</p>
+            <div class="studio-project-actions">
+              <a href="incident-replay-lab.html">Explore the project <span aria-hidden="true">&rarr;</span></a>
+              <a href="https://abrahamkaunda-create.github.io/incident-replay-lab/" target="_blank" rel="noopener noreferrer">Open live lab <span aria-hidden="true">&#8599;</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="studio-project studio-project-maintenance" id="data-project">
+          <div class="studio-project-visual project-visual maintenance-visual" aria-hidden="true">
+            <div class="maintenance-panel">
+              <div class="maintenance-panel-bar">
+                <span>AI4I 2020</span>
+                <em>Synthetic data</em>
+              </div>
+              <div class="maintenance-metrics">
+                <div><span>Recall</span><strong>88.2%</strong></div>
+                <div><span>Precision</span><strong>18.0%</strong></div>
+                <div><span>Avg precision</span><strong>43.0%</strong></div>
+              </div>
+              <div class="maintenance-chart">
+                <i style="--bar-height: 31%"></i><i style="--bar-height: 45%"></i>
+                <i style="--bar-height: 38%"></i><i style="--bar-height: 62%"></i>
+                <i style="--bar-height: 55%"></i><i style="--bar-height: 82%"></i>
+                <i style="--bar-height: 70%"></i><i style="--bar-height: 94%"></i>
+              </div>
+            </div>
+            <div class="visual-caption maintenance-caption"><span>Validate</span><span>Analyse</span><span>Evaluate</span></div>
+          </div>
+          <div class="studio-project-copy">
+            <p class="studio-project-number">02 / Graduate data science project</p>
+            <p class="studio-project-name">Predictive Maintenance Analytics</p>
+            <h3>Make the trade-offs visible.</h3>
+            <p class="studio-project-summary">
+              A data dashboard that explores patterns associated with machine failure.
+              It follows the synthetic UCI AI4I 2020 dataset from preparation to evaluation.
             </p>
-          </div>
-          <ul class="skill-list">
-            <li><b>01</b>HTML &amp; CSS</li>
-            <li><b>02</b>Python</li>
-            <li><b>03</b>Basic SQL</li>
-            <li><b>04</b>Git &amp; GitHub</li>
-            <li><b>05</b>Networking fundamentals</li>
-            <li><b>06</b>VMware &amp; VirtualBox</li>
-            <li><b>07</b>pfSense</li>
-            <li><b>08</b>Technical documentation</li>
-            <li><b>09</b>Windows Server &amp; Active Directory</li>
-            <li><b>10</b>PowerShell</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="strengths section" id="approach">
-        <div class="section-label"><span>02</span> How I work</div>
-        <div class="strengths-content">
-          <div class="strengths-heading">
-            <h2>Build it.<br>Test it.<br>Understand it.</h2>
-            <p>I care about the process behind the result: clear thinking, honest claims and work I can explain properly.</p>
-          </div>
-          <div class="strength-grid">
-            <article>
-              <span class="strength-number">01 /</span>
-              <h3>Build to learn</h3>
-              <p>Turn ideas into working projects because making something reveals what theory alone can hide.</p>
-            </article>
-            <article>
-              <span class="strength-number">02 /</span>
-              <h3>Understand the system</h3>
-              <p>Look beyond the interface, follow how the parts connect and test assumptions methodically.</p>
-            </article>
-            <article>
-              <span class="strength-number">03 /</span>
-              <h3>Keep it honest</h3>
-              <p>Document what worked, acknowledge limitations and only claim knowledge I can discuss.</p>
-            </article>
-          </div>
-          <div class="qualification-row">
-            <span>Education</span>
-            <strong>BSc (Hons) Computer Science</strong>
-            <span>University of Roehampton · 2024</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="atlas-section section" id="atlas" aria-labelledby="atlas-title" data-project-atlas>
-        <div class="atlas-heading">
-          <div class="section-label"><span>03</span> Explore</div>
-          <h2 id="atlas-title">See how my projects connect.</h2>
-          <p>Choose an area to see the projects and evidence behind it.</p>
-        </div>
-
-        <div class="atlas-shell">
-          <div class="atlas-map">
-            <div class="atlas-map-top">
-              <span>Capability map</span>
-              <span class="atlas-map-status"><i></i><span data-atlas-status>Data selected</span></span>
+            <dl class="studio-facts">
+              <div><dt>Pipeline</dt><dd>pandas, Parquet and DuckDB</dd></div>
+              <div><dt>Model</dt><dd>Leakage-safe classification</dd></div>
+              <div><dt>Testing</dt><dd>16 unit tests</dd></div>
+            </dl>
+            <p class="studio-honesty-note">A learning project, not a production maintenance system.</p>
+            <div class="studio-project-actions">
+              <a href="https://abrahamkaunda-predictive-maintenance.streamlit.app/" target="_blank" rel="noopener noreferrer">Open dashboard <span aria-hidden="true">&#8599;</span></a>
+              <a href="https://github.com/abrahamkaunda-create/predictive-maintenance-analytics" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">&#8599;</span></a>
             </div>
-            <div class="atlas-network" role="group" aria-label="Choose a capability area">
-              <span class="atlas-core" aria-hidden="true"><b>AK</b><small>Evidence</small></span>
-              <span class="atlas-connector atlas-connector-data is-active" data-atlas-connector="data"></span>
-              <span class="atlas-connector atlas-connector-software" data-atlas-connector="software"></span>
-              <span class="atlas-connector atlas-connector-systems" data-atlas-connector="systems"></span>
-              <span class="atlas-connector atlas-connector-networking" data-atlas-connector="networking"></span>
-              <button class="atlas-node atlas-node-data is-active" type="button" data-atlas-node="data" aria-pressed="true">
-                <span>01</span><strong>Data</strong><small>Analyse</small>
-              </button>
-              <button class="atlas-node atlas-node-software" type="button" data-atlas-node="software" aria-pressed="false">
-                <span>02</span><strong>Software</strong><small>Build</small>
-              </button>
-              <button class="atlas-node atlas-node-systems" type="button" data-atlas-node="systems" aria-pressed="false">
-                <span>03</span><strong>Systems</strong><small>Configure</small>
-              </button>
-              <button class="atlas-node atlas-node-networking" type="button" data-atlas-node="networking" aria-pressed="false">
-                <span>04</span><strong>Networking</strong><small>Connect</small>
-              </button>
-            </div>
-            <p class="atlas-map-hint">Choose an area. Arrow keys also work.</p>
           </div>
+        </article>
 
-          <article class="atlas-detail" aria-live="polite" aria-atomic="true">
-            <header class="atlas-detail-header">
-              <div>
-                <p class="atlas-domain" data-atlas-domain>01 / Data</p>
-                <h3 data-atlas-title>Data that can be questioned, not just displayed.</h3>
+        <article class="studio-project studio-project-ad" id="systems-project">
+          <div class="studio-project-visual project-visual ad-visual" aria-hidden="true">
+            <div class="ad-lab-panel">
+              <div class="ad-lab-bar"><span>corp.local</span><em>isolated VMware lab</em></div>
+              <div class="ad-lab-stage">
+                <div class="ad-machine ad-server"><i>DC</i><strong>DC01</strong><small>192.168.50.10</small></div>
+                <div class="ad-connection"><span></span><b></b></div>
+                <div class="ad-machine ad-client"><i>PC</i><strong>CLIENT01</strong><small>192.168.50.20</small></div>
+                <span class="ad-event ad-event-dns"><b>DNS</b><small>name resolved</small></span>
+                <span class="ad-event ad-event-gpo"><b>GPO</b><small>policy applied</small></span>
+                <span class="ad-event ad-event-smb"><b>SMB</b><small>access tested</small></span>
               </div>
-            </header>
-            <p class="atlas-description" data-atlas-description>Validated preparation and honest evaluation make the model&rsquo;s trade-offs visible.</p>
-            <div class="atlas-skills" data-atlas-skills aria-label="Data tools">
-              <span>Python</span><span>pandas</span><span>DuckDB SQL</span><span>scikit-learn</span><span>Streamlit</span>
             </div>
-            <div class="atlas-evidence" data-atlas-projects>
-              <article>
-                <p>01 / Documented project</p>
-                <h4>Predictive Maintenance Analytics</h4>
-                <span>Synthetic AI4I 2020 data · validated pipeline · imbalanced classification</span>
-                <div class="atlas-links">
-                  <a href="https://abrahamkaunda-predictive-maintenance.streamlit.app/" target="_blank" rel="noopener noreferrer">Open dashboard <span aria-hidden="true">↗</span></a>
-                  <a href="https://github.com/abrahamkaunda-create/predictive-maintenance-analytics" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
-                </div>
-              </article>
+            <div class="visual-caption ad-caption"><span>Configure</span><span>Validate</span><span>Troubleshoot</span></div>
+          </div>
+          <div class="studio-project-copy">
+            <p class="studio-project-number">03 / Windows infrastructure lab</p>
+            <p class="studio-project-name">Windows Active Directory Lab</p>
+            <h3>Build the system. Then prove it works.</h3>
+            <p class="studio-project-summary">
+              A simulated workplace network for managing users, policies and file
+              access. The isolated lab also documents common support incidents.
+            </p>
+            <dl class="studio-facts">
+              <div><dt>Environment</dt><dd>Server 2025 and Windows 11</dd></div>
+              <div><dt>Access</dt><dd>SMB and NTFS verification</dd></div>
+              <div><dt>Automation</dt><dd>PowerShell provisioning</dd></div>
+            </dl>
+            <p class="studio-honesty-note">An isolated learning environment with evidence limits stated.</p>
+            <div class="studio-project-actions">
+              <a href="windows-ad-lab.html">Read the case study <span aria-hidden="true">&rarr;</span></a>
+              <a href="https://github.com/abrahamkaunda-create/windows-ad-lab" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">&#8599;</span></a>
             </div>
-            <a class="atlas-all-projects" href="#projects">View all projects <span aria-hidden="true">&darr;</span></a>
+          </div>
+        </article>
+      </section>
+
+      <section class="studio-more section" aria-labelledby="more-work-title">
+        <div class="studio-more-heading">
+          <p class="studio-section-number">02 / More work</p>
+          <h2 id="more-work-title">More projects.<br>Each one taught me something.</h2>
+        </div>
+        <div class="studio-more-grid">
+          <article>
+            <span>Python &middot; Streamlit &middot; Networking</span>
+            <h3>IT Operations Toolkit</h3>
+            <p>Subnet calculations, deterministic log analysis and transparent support-ticket prioritisation in one tested application.</p>
+            <div><b>30 tests</b><b>3 tools</b></div>
+            <a href="https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/" target="_blank" rel="noopener noreferrer">Open toolkit <span aria-hidden="true">&#8599;</span></a>
+          </article>
+          <article>
+            <span>pfSense &middot; VMware &middot; Troubleshooting</span>
+            <h3>pfSense Network Security Lab</h3>
+            <p>An evidence-led pfSense case study covering core services, firewall policy, multi-WAN and an unsuccessful VPN handshake.</p>
+            <div><b>Case study</b><b>Honest limits</b></div>
+            <a href="pfsense-project.html">Read case study <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article>
+            <span>HTML &middot; CSS &middot; JavaScript</span>
+            <h3>This Portfolio</h3>
+            <p>A responsive static site built to make project evidence accessible without frameworks or server-side dependencies.</p>
+            <div><b>Accessible</b><b>Static</b></div>
+            <a href="https://github.com/abrahamkaunda-create/abrahamkaunda-create.github.io" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">&#8599;</span></a>
           </article>
         </div>
       </section>
 
-      <section class="projects-section section" id="projects">
-        <div class="projects-heading">
-          <div class="section-label"><span>04</span> Selected projects</div>
-          <h2>Things I&apos;ve built and explored.</h2>
-          <p>Each project represents a real problem, a set of choices and something useful learned along the way.</p>
+      <section class="studio-capabilities section" aria-labelledby="capabilities-title">
+        <div>
+          <p class="studio-section-number">03 / Explore by area</p>
+          <h2 id="capabilities-title">Different tools.<br>The same approach.</h2>
         </div>
-
-        <div class="projects-grid">
-          <article class="project-tile project-tile-featured project-tile-incident">
-            <div class="project-visual incident-visual" aria-hidden="true">
-              <div class="incident-panel">
-                <div class="incident-panel-bar">
-                  <span>Incident replay</span>
-                  <em>synthetic events</em>
-                </div>
-                <div class="incident-timeline">
-                  <span class="incident-event incident-event-one"><i>4625</i><b>Failed login</b></span>
-                  <span class="incident-event incident-event-two"><i>4625</i><b>Threshold reached</b></span>
-                  <span class="incident-event incident-event-three"><i>AUTH-001</i><b>Incident created</b></span>
-                </div>
-                <div class="incident-alert">
-                  <span>MEDIUM</span>
-                  <strong>Password guessing detected</strong>
-                  <small>Score 45 · 5 related events</small>
-                </div>
-              </div>
-              <div class="visual-caption incident-caption"><span>Replay</span><span>Detect</span><span>Investigate</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Interactive cybersecurity project · Incident analysis</p>
-              <h3>Incident Replay Lab</h3>
-              <p>
-                Built a browser-based lab that replays synthetic Windows Security
-                and pfSense firewall events, applies four explainable detection
-                rules and groups related activity into incidents that can be
-                reviewed through a simple investigation workflow.
-              </p>
-              <ul>
-                <li><span>01</span> Four deterministic scenarios covering authentication and firewall activity</li>
-                <li><span>02</span> Transparent thresholds, severity scoring and supporting-event timelines</li>
-                <li><span>03</span> Responsive interface with replay controls, local audit history and 27 tests</li>
-              </ul>
-              <div class="project-tags"><span>React</span><span>TypeScript</span><span>Event analysis</span><span>Detection logic</span><span>Unit testing</span></div>
-              <div class="project-runtime-note">All events are synthetic and processed in the browser. No account or setup is required.</div>
-              <div class="project-links project-links-three">
-                <a class="project-link" href="incident-replay-lab.html">Read the case study <span aria-hidden="true">↗</span></a>
-                <a class="project-link" href="https://abrahamkaunda-create.github.io/incident-replay-lab/" target="_blank" rel="noopener noreferrer">Open live lab <span aria-hidden="true">↗</span></a>
-                <a class="project-link" href="https://github.com/abrahamkaunda-create/incident-replay-lab" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-tile project-tile-featured project-tile-maintenance">
-            <div class="project-visual maintenance-visual" aria-hidden="true">
-              <div class="maintenance-panel">
-                <div class="maintenance-panel-bar">
-                  <span>AI4I 2020</span>
-                  <em>Synthetic data</em>
-                </div>
-                <div class="maintenance-metrics">
-                  <div><span>Recall</span><strong>88.2%</strong></div>
-                  <div><span>Precision</span><strong>18.0%</strong></div>
-                  <div><span>Avg precision</span><strong>43.0%</strong></div>
-                </div>
-                <div class="maintenance-chart">
-                  <i style="--bar-height: 31%"></i>
-                  <i style="--bar-height: 45%"></i>
-                  <i style="--bar-height: 38%"></i>
-                  <i style="--bar-height: 62%"></i>
-                  <i style="--bar-height: 55%"></i>
-                  <i style="--bar-height: 82%"></i>
-                  <i style="--bar-height: 70%"></i>
-                  <i style="--bar-height: 94%"></i>
-                </div>
-              </div>
-              <div class="visual-caption maintenance-caption"><span>Validate</span><span>Analyse</span><span>Evaluate</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Graduate data science project · Predictive maintenance</p>
-              <h3>Predictive Maintenance Analytics</h3>
-              <p>
-                Predictive maintenance analytics dashboard built with Python,
-                DuckDB, scikit-learn and Streamlit using the synthetic UCI AI4I
-                2020 dataset. The project focuses on reproducible analysis,
-                leakage-safe modelling and honest evaluation for an imbalanced
-                classification problem.
-              </p>
-              <ul>
-                <li><span>01</span> Validated data pipeline with pandas, Parquet and DuckDB SQL</li>
-                <li><span>02</span> Scikit-learn pipeline compared with a transparent dummy baseline</li>
-                <li><span>03</span> Responsive Streamlit dashboard supported by 16 unit tests</li>
-              </ul>
-              <div class="project-tags"><span>Python</span><span>pandas</span><span>DuckDB</span><span>scikit-learn</span><span>Streamlit</span></div>
-              <div class="project-runtime-note">The live application may take a few seconds to start on free hosting.</div>
-              <div class="project-links">
-                <a class="project-link" href="https://abrahamkaunda-predictive-maintenance.streamlit.app/" target="_blank" rel="noopener noreferrer">Open live dashboard <span aria-hidden="true">↗</span></a>
-                <a class="project-link" href="https://github.com/abrahamkaunda-create/predictive-maintenance-analytics" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-tile project-tile-featured">
-            <div class="project-visual toolkit-visual" aria-hidden="true">
-              <div class="toolkit-console">
-                <div class="toolkit-console-bar"><i></i><i></i><i></i><span>it_operations_toolkit.py</span></div>
-                <div class="toolkit-console-body">
-                  <div class="toolkit-demo toolkit-demo-subnet">
-                    <span class="toolkit-demo-label">01 / Subnet calculator</span>
-                    <p><b>INPUT</b><span>192.168.10.25/24</span></p>
-                    <p><b>NET</b><span>192.168.10.0/24</span></p>
-                    <p><b>HOSTS</b><span>192.168.10.1–254</span><em>254 usable</em></p>
-                  </div>
-                  <div class="toolkit-demo toolkit-demo-log">
-                    <span class="toolkit-demo-label">02 / Log analyser</span>
-                    <p><b>READ</b><span>18 entries parsed</span></p>
-                    <p><b>LEVELS</b><span>3 errors · 3 warnings</span></p>
-                    <p><b>IPV4</b><span>10 unique addresses</span><em>extracted</em></p>
-                  </div>
-                  <div class="toolkit-demo toolkit-demo-ticket">
-                    <span class="toolkit-demo-label">03 / Ticket prioritiser</span>
-                    <p><b>ISSUE</b><span>Email service unavailable</span></p>
-                    <p><b>SCORE</b><span>Impact + urgency</span><em>16/16</em></p>
-                    <p><b>RESULT</b><span>Priority calculated</span><em>P1</em></p>
-                  </div>
-                </div>
-              </div>
-              <div class="visual-caption toolkit-caption"><span>Calculate</span><span>Analyse</span><span>Prioritise</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Python web application · IT operations</p>
-              <h3>IT Operations Toolkit</h3>
-              <p>
-                Built a multipage toolkit containing an IPv4 subnet calculator,
-                deterministic log analyser and transparent support-ticket
-                prioritiser. The reusable Python logic is kept separate from
-                the Streamlit interface and covered by unit tests.
-              </p>
-              <ul>
-                <li><span>01</span> IPv4 calculations with validation and subnet edge cases</li>
-                <li><span>02</span> Log severity, timestamp and address extraction with filtering</li>
-                <li><span>03</span> Documented ticket scoring and 30 repeatable unit tests</li>
-              </ul>
-              <div class="project-tags"><span>Python</span><span>Streamlit</span><span>Networking</span><span>Text parsing</span><span>Unit testing</span></div>
-              <div class="project-runtime-note">The live application may take a few seconds to start on free hosting.</div>
-              <div class="project-links">
-                <a class="project-link" href="https://it-operations-toolkit-apygrmvbleecnclt6dmgfc.streamlit.app/" target="_blank" rel="noopener noreferrer">Open live toolkit <span aria-hidden="true">↗</span></a>
-                <a class="project-link" href="https://github.com/abrahamkaunda-create/it-operations-toolkit" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-tile project-tile-featured project-tile-ad">
-            <div class="project-visual ad-visual" aria-hidden="true">
-              <div class="ad-lab-panel">
-                <div class="ad-lab-bar">
-                  <span>corp.local</span>
-                  <em>isolated VMware lab</em>
-                </div>
-                <div class="ad-topology">
-                  <div class="ad-machine ad-server">
-                    <i></i>
-                    <strong>DC01</strong>
-                    <span>192.168.50.10</span>
-                  </div>
-                  <div class="ad-connection"><b></b></div>
-                  <div class="ad-machine ad-client">
-                    <i></i>
-                    <strong>CLIENT01</strong>
-                    <span>192.168.50.20</span>
-                  </div>
-                  <div class="ad-event ad-event-dns"><b>DNS</b><span>name resolved</span></div>
-                  <div class="ad-event ad-event-gpo"><b>GPO</b><span>policy applied</span></div>
-                  <div class="ad-event ad-event-smb"><b>SMB</b><span>access tested</span></div>
-                </div>
-              </div>
-              <div class="visual-caption ad-caption"><span>Configure</span><span>Validate</span><span>Troubleshoot</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Windows infrastructure · IT support lab</p>
-              <h3>Windows Active Directory Lab</h3>
-              <p>
-                Built an isolated Windows domain using Server 2025 and a Windows
-                11 client. I configured Active Directory, DNS, Group Policy and
-                role-based file access, then documented support incidents and a
-                small PowerShell provisioning workflow.
-              </p>
-              <ul>
-                <li><span>01</span> Domain, OU, user, group and client-join configuration</li>
-                <li><span>02</span> Group Policy plus tested SMB and NTFS access control</li>
-                <li><span>03</span> Secure-channel troubleshooting and documented evidence limits</li>
-              </ul>
-              <div class="project-tags"><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Group Policy</span><span>IT support</span></div>
-              <div class="project-links">
-                <a class="project-link" href="windows-ad-lab.html">Read the case study <span aria-hidden="true">↗</span></a>
-                <a class="project-link" href="https://github.com/abrahamkaunda-create/windows-ad-lab" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-tile project-tile-network">
-            <div class="project-visual network-visual" aria-hidden="true">
-              <div class="firewall-pill">pf</div>
-              <div class="traffic traffic-a"></div>
-              <div class="traffic traffic-b"></div>
-              <div class="traffic traffic-c"></div>
-              <div class="visual-caption network-caption"><span>WAN</span><span>Firewall</span><span>LAN</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Final-year project · Network security</p>
-              <h3>pfSense Network Security Lab</h3>
-              <p>
-                Built an undergraduate VMware lab to explore pfSense through
-                network services, firewall policy, NAT, multi-WAN routing and
-                WireGuard configuration. The case study separates retained
-                evidence from conclusions that were not fully verified.
-              </p>
-              <ul>
-                <li><span>01</span> VMware lab with DHCP, DNS, firewall rules and NAT</li>
-                <li><span>02</span> Two online Tier 1 gateways and WireGuard setup</li>
-                <li><span>03</span> Honest troubleshooting retrospective for a failed VPN handshake</li>
-              </ul>
-              <div class="project-tags"><span>pfSense</span><span>Networking</span><span>Virtualisation</span><span>Troubleshooting</span></div>
-              <a class="project-link" href="pfsense-project.html">Read the case study <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <article class="project-tile project-tile-web">
-            <div class="project-visual web-visual" aria-hidden="true">
-              <div class="browser-window">
-                <div class="browser-bar"><i></i><i></i><i></i><span class="browser-status"><b></b>Live</span></div>
-                <div class="browser-content">
-                  <span class="code-line code-line-long"></span>
-                  <span class="code-line"></span>
-                  <span class="code-block"></span>
-                  <span class="code-block code-block-accent"></span>
-                </div>
-              </div>
-              <div class="visual-caption web-caption"><span>Design</span><span>Build</span><span>Deploy</span></div>
-            </div>
-            <div class="project-copy">
-              <p class="project-type">Web project · This portfolio</p>
-              <h3>Personal portfolio website</h3>
-              <p>
-                Designed and built this responsive portfolio to present my work
-                clearly. The project uses readable HTML and CSS, GitHub version
-                control and static publishing through GitHub Pages.
-              </p>
-              <ul>
-                <li><span>01</span> Responsive layout with accessible navigation</li>
-                <li><span>02</span> Portable static source with no framework dependency</li>
-                <li><span>03</span> Static deployment from the main branch through GitHub Pages</li>
-              </ul>
-              <div class="project-tags"><span>HTML</span><span>CSS</span><span>GitHub</span><span>GitHub Pages</span></div>
-              <a class="project-link" href="https://github.com/abrahamkaunda-create/abrahamkaunda-create.github.io" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
+        <div class="studio-capability-list">
+          <a href="#data-project"><span>01</span><strong>Data</strong><small>Validate and evaluate</small><i aria-hidden="true">&rarr;</i></a>
+          <a href="#incident-project"><span>02</span><strong>Software</strong><small>Build and test</small><i aria-hidden="true">&rarr;</i></a>
+          <a href="#systems-project"><span>03</span><strong>Systems</strong><small>Configure and verify</small><i aria-hidden="true">&rarr;</i></a>
+          <a href="pfsense-project.html"><span>04</span><strong>Networking</strong><small>Connect and troubleshoot</small><i aria-hidden="true">&rarr;</i></a>
         </div>
-
-        <p class="project-note"><span>+</span> This is a working portfolio. New projects will be added when they are real, tested and worth explaining.</p>
       </section>
 
+      <section class="studio-about section" id="about" aria-labelledby="about-title">
+        <p class="studio-section-number">04 / About</p>
+        <div class="studio-about-copy">
+          <h2 id="about-title">I learn best by building things and understanding how they work.</h2>
+          <p>
+            I am a Computer Science graduate who enjoys moving from a rough idea
+            to something functional. I care about clear thinking, reliable testing
+            and being able to explain what I built without exaggerating it. When I
+            come across something unfamiliar, I take time to research it, test it
+            and document what I learn.
+          </p>
+        </div>
+        <div class="studio-principles">
+          <div><span>01</span><strong>Build to learn</strong></div>
+          <div><span>02</span><strong>Test assumptions</strong></div>
+          <div><span>03</span><strong>Keep claims honest</strong></div>
+        </div>
+      </section>
     </main>
 
-    <footer>
+    <footer class="studio-footer">
       <div>
         <p class="eyebrow">Open to opportunities</p>
-        <h2>Interested in discussing a junior IT, cybersecurity, networking or software opportunity?</h2>
+        <h2>Have a role or project worth discussing?</h2>
       </div>
-      <a class="footer-email" href="mailto:abrahamkaunda@gmail.com">abrahamkaunda@gmail.com <span aria-hidden="true">↗</span></a>
-      <p class="footer-bottom">© 2026 Abraham Kaunda <a href="https://github.com/abrahamkaunda-create" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span>London, United Kingdom</span></p>
+      <a class="footer-email" href="mailto:abrahamkaunda@gmail.com">abrahamkaunda@gmail.com <span aria-hidden="true">&#8599;</span></a>
+      <p class="footer-bottom">
+        <span>&copy; <span data-current-year>2026</span> Abraham Kaunda</span>
+        <a href="https://github.com/abrahamkaunda-create" target="_blank" rel="noopener noreferrer">GitHub &#8599;</a>
+        <span>London, United Kingdom</span>
+      </p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js?v=20260813b"></script>
+    <script src="studio-home.js?v=20260813b"></script>
   </body>
 </html>
